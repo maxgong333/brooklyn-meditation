@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Schedule | Brooklyn Meditation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      color: var(--white);
+    }
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+    .day-col {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+    }
+    .day-col .day-header {
+      padding: 14px 12px;
+      background: var(--primary-light);
+      text-align: center;
+    }
+    .day-col .day-header .weekday {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+    }
+    .day-col .class-item {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .day-col .class-item:last-child {
+      border-bottom: none;
+    }
+    .day-col .class-item:hover {
+      background: var(--bg);
+    }
+    .day-col .class-item .time {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .day-col .class-item .class-name {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .day-col .class-item .badge-row {
+      margin-top: 6px;
+    }
+    .online-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #EAE8F0;
+      color: #4E3D7A;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 20px;
+    }
+    .free-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #E8F4EC;
+      color: #2D7A4E;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 20px;
+    }
+    .open-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: #FFF4E0;
+      color: #8B6000;
+      font-size: 0.65rem;
+      font-weight: 600;
+      border-radius: 20px;
+    }
+    .hours-box {
+      background: var(--dark);
+      color: var(--white);
+      border-radius: var(--border-radius);
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .hours-box h3 { color: var(--white); margin-bottom: 8px; }
+    .hours-box p { color: rgba(255,255,255,0.65); margin: 0; }
+    .hours-box .phone a { color: var(--primary); font-size:1.1rem; font-weight:500; text-decoration:none; }
+
+    @media (max-width: 900px) {
+      .week-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .week-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <div class="logo-text">Brooklyn Meditation<span>Park Slope · Est. 2015</span></div>
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown"><a href="about.html">About ▾</a>
+        <div class="dropdown-menu">
+          <a href="about.html">Our Method</a>
+          <a href="about.html#founder">Founder</a>
+          <a href="about.html#experiences">Experiences</a>
+        </div>
+      </li>
+      <li class="dropdown"><a href="membership.html">Membership ▾</a>
+        <div class="dropdown-menu">
+          <a href="membership.html">Plans & Pricing</a>
+          <a href="schedule.html">Class Schedule</a>
+          <a href="membership.html#faq">FAQ</a>
+        </div>
+      </li>
+      <li class="dropdown"><a href="events.html">Events ▾</a>
+        <div class="dropdown-menu">
+          <a href="events.html#open">Open Sessions</a>
+          <a href="events.html#workshops">Workshops</a>
+          <a href="events.html#corporate">Corporate</a>
+        </div>
+      </li>
+      <li><a href="about.html#blog">Blog</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="schedule.html" class="btn btn-secondary" style="border-color:var(--primary); color:var(--primary-dark);">Schedule</a>
+      <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary">Book Intro</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary" style="justify-content:center;">Book Free Intro</a>
+  </div>
+</div>
+
+<div class="page-header">
+  <span class="section-label">Weekly Schedule</span>
+  <h1>Class Schedule</h1>
+  <p style="max-width:500px; margin:16px auto 0;">In-person at Park Slope and live online — find a time that works for you.</p>
+</div>
+
+<section style="background: var(--bg); padding: 64px 24px;">
+  <div class="container">
+
+    <!-- Hours -->
+    <div class="hours-box">
+      <div>
+        <h3>Studio Hours</h3>
+        <p>Mon – Fri: 9:00 AM – 8:00 PM</p>
+        <p>Sat – Sun: 10:15 AM – 4:00 PM</p>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>833 Union Street, 2nd Floor</p>
+        <p>Park Slope, Brooklyn 11215</p>
+      </div>
+      <div class="phone">
+        <h3>Questions?</h3>
+        <p><a href="tel:7186221868">(718) 622-1868</a></p>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.85rem;">Text: (347) 915-5099</p>
+      </div>
+    </div>
+
+    <!-- Filter -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Classes</button>
+      <button class="filter-btn" data-filter="inperson">In-Person</button>
+      <button class="filter-btn" data-filter="online">Online</button>
+      <button class="filter-btn" data-filter="free">Free Sessions</button>
+    </div>
+
+    <!-- Week grid -->
+    <div class="week-grid">
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Monday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div></div>
+      </div>
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Tuesday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div></div>
+      </div>
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Wednesday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div></div>
+      </div>
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Thursday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div></div>
+      </div>
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Friday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div></div>
+        <div class="class-item"><div class="time">3:00 PM</div><div class="class-name">Open Meditation</div><div class="badge-row"><span class="free-badge">Free</span><span class="open-badge" style="margin-left:4px;">Open</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div></div>
+      </div>
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Saturday</div></div>
+        <div class="class-item"><div class="time">10:15 AM</div><div class="class-name">Morning Session</div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="class-name">Midday Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+      </div>
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Sunday</div></div>
+        <div class="class-item"><div class="time">11:30 AM</div><div class="class-name">Open Meditation</div><div class="badge-row"><span class="free-badge">Free</span><span class="open-badge" style="margin-left:4px;">Open</span></div></div>
+        <div class="class-item"><div class="time">1:00 PM</div><div class="class-name">Afternoon Session</div></div>
+      </div>
+    </div>
+
+    <!-- Booking CTA -->
+    <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--border-radius); padding:40px; text-align:center;">
+      <h3 style="margin-bottom:12px;">Ready to book?</h3>
+      <p style="margin-bottom:28px;">Members book online. Not yet a member? Start with a free intro session.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary">Book Free Intro</a>
+        <a href="membership.html" class="btn btn-secondary">View Membership Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="brand-name">Brooklyn Meditation</div>
+        <div class="brand-sub">Park Slope · Est. 2015</div>
+        <p>A guided meditation practice for lasting peace, clarity, and joy.</p>
+        <div class="footer-contact-info">
+          <a href="tel:7186221868">📞 (718) 622-1868</a>
+          <a href="mailto:info@bklynmeditation.com">✉ info@bklynmeditation.com</a>
+          <a href="https://maps.google.com/?q=833+Union+Street+Brooklyn+NY" target="_blank">📍 833 Union St, 2nd Floor, Park Slope 11215</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="about.html">Our Method</a></li>
+          <li><a href="about.html#founder">Founder</a></li>
+          <li><a href="about.html#team">Guides</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Membership</h5>
+        <ul>
+          <li><a href="membership.html">Plans & Pricing</a></li>
+          <li><a href="schedule.html">Class Schedule</a></li>
+          <li><a href="membership.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Events</h5>
+        <ul>
+          <li><a href="events.html#open">Free Open Sessions</a></li>
+          <li><a href="events.html#workshops">Workshops</a></li>
+          <li><a href="events.html#corporate">Corporate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Brooklyn Meditation. All rights reserved.</span>
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/bklynmeditation/" target="_blank" class="social-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/brooklyn.meditation/" target="_blank" class="social-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  document.getElementById('mobileNavClose').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+</script>
+</body>
+</html>
