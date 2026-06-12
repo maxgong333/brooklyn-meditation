@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Intro | Brooklyn Meditation</title>
+  <meta name="description" content="Book your introductory session at Brooklyn Meditation. Choose a free 30-minute consultation, a 60-minute trial, or join a free open session." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── Navigation ── -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <img src="logo.png" alt="Brooklyn Meditation" style="height:72px; width:auto;" />
+    </a>
+    <ul class="navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="about.html">About ▾</a>
+        <div class="dropdown-menu">
+          <a href="about.html">Our Method</a>
+          <a href="about.html#founder">Founder & History</a>
+          <a href="about.html#team">Meet the Guides</a>
+          <a href="about.html#experiences">Meditators' Experiences</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="membership.html">Membership ▾</a>
+        <div class="dropdown-menu">
+          <a href="membership.html">Plans & Pricing</a>
+          <a href="schedule.html">Class Schedule</a>
+          <a href="membership.html#faq">FAQ</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="events.html">Events ▾</a>
+        <div class="dropdown-menu">
+          <a href="events.html#open">Open Meditation Sessions</a>
+          <a href="events.html#workshops">Workshops & Programs</a>
+          <a href="events.html#online">Free Online Series</a>
+          <a href="events.html#corporate">Corporate Workshops</a>
+        </div>
+      </li>
+      <li><a href="about.html#blog">Blog</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <a href="schedule.html" class="btn btn-secondary">Class Schedule</a>
+      <a href="book-intro.html" class="btn btn-primary">Book Intro</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li>
+      <a href="about.html">About</a>
+      <div class="mobile-sub">
+        <a href="about.html">Our Method</a>
+        <a href="about.html#founder">Founder & History</a>
+        <a href="about.html#experiences">Meditators' Experiences</a>
+      </div>
+    </li>
+    <li>
+      <a href="membership.html">Membership</a>
+      <div class="mobile-sub">
+        <a href="membership.html">Plans & Pricing</a>
+        <a href="schedule.html">Class Schedule</a>
+      </div>
+    </li>
+    <li>
+      <a href="events.html">Events & Workshops</a>
+      <div class="mobile-sub">
+        <a href="events.html#open">Open Sessions</a>
+        <a href="events.html#workshops">Workshops</a>
+        <a href="events.html#corporate">Corporate</a>
+      </div>
+    </li>
+    <li><a href="about.html#blog">Blog</a></li>
+  </ul>
+  <div class="mobile-nav-actions">
+    <a href="schedule.html" class="btn btn-secondary" style="justify-content:center;">Class Schedule</a>
+    <a href="book-intro.html" class="btn btn-primary" style="justify-content:center;">Book Intro</a>
+  </div>
+</div>
+
+<!-- ── Page Header ── -->
+<section style="padding: 120px 24px 60px; background: var(--bg); text-align: center; border-bottom: 1px solid var(--border);">
+  <div class="container" style="max-width: 680px;">
+    <span class="section-label">Get Started</span>
+    <h1 style="font-size: clamp(2.4rem, 5vw, 3.6rem); margin: 16px 0 24px;">Book Your Intro</h1>
+    <p style="font-size: 1.1rem; color: var(--text-light); line-height: 1.9;">
+      Choose between a free 30-minute consultation, a 60-minute trial session, or join our free open session. All options are available in-person in Park Slope or online.
+    </p>
+    <blockquote style="margin: 40px auto 0; max-width: 560px; font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-style:italic; color:var(--primary-dark); line-height:1.8; border-left: 3px solid var(--primary); padding-left: 24px; text-align: left;">
+      "True freedom is to live as it is without judgement and discernment, to live life but not belong to it, and to live absent of one's self."
+      <cite style="display:block; margin-top:12px; font-size:0.85rem; font-style:normal; letter-spacing:.08em; text-transform:uppercase; color:var(--text-light);">— Teacher Woo Myung</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ── Booking Options ── -->
+<section style="padding: 80px 24px; background: var(--white);">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 960px; margin: 0 auto;">
+
+      <!-- 60-min Trial -->
+      <div style="border: 2px solid var(--primary); border-radius: var(--border-radius); padding: 48px 36px; position: relative; background: var(--bg);">
+        <div style="position:absolute; top:-14px; left:32px; background:var(--primary); color:var(--dark); font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:4px 14px; border-radius:20px;">Most Popular</div>
+        <h2 style="font-size:1.8rem; margin-bottom:8px;">60-Minute Trial</h2>
+        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Online or In-person · By appointment</p>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--primary-dark); line-height:1; margin-bottom:24px;">$35</div>
+        <p style="line-height:1.8; color:var(--text-light); margin-bottom:36px;">Learn about our comprehensive meditation program and experience a guided meditation first-hand. Q&A with your guide CJ or Elizabeth.</p>
+        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Book Now via Calendly</a>
+      </div>
+
+      <!-- 30-min Consultation -->
+      <div style="border: 1px solid var(--border); border-radius: var(--border-radius); padding: 48px 36px; background: var(--white);">
+        <h2 style="font-size:1.8rem; margin-bottom:8px;">30-Minute Consultation</h2>
+        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Online or In-person · By appointment</p>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--accent); line-height:1; margin-bottom:24px;">Free</div>
+        <p style="line-height:1.8; color:var(--text-light); margin-bottom:36px;">Learn about our meditation method addressing your unique goals, challenges, and questions. A great first step with no commitment required.</p>
+        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; display:block;">Schedule via Calendly</a>
+      </div>
+
+      <!-- Open Session -->
+      <div style="border: 1px solid var(--border); border-radius: var(--border-radius); padding: 48px 36px; background: var(--white);">
+        <h2 style="font-size:1.8rem; margin-bottom:8px;">Open Session</h2>
+        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">In-person only · No appointment needed</p>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--accent); line-height:1; margin-bottom:24px;">Free</div>
+        <p style="line-height:1.8; color:var(--text-light); margin-bottom:16px;">Experience our meditation method and connect with a welcoming community. All are welcome — beginners and experienced meditators alike.</p>
+        <div style="background: var(--primary-light); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px;">
+          <div style="font-weight:600; margin-bottom:6px; font-size:0.95rem;">Upcoming Sessions</div>
+          <div style="font-size:0.9rem; color:var(--text-light); line-height:1.7;">
+            🕒 Every <strong>Friday at 3:00 PM</strong><br>
+            🕒 Every <strong>Sunday at 11:30 AM</strong>
+          </div>
+        </div>
+        <a href="https://www.brooklynmeditation.nyc/open-intro" target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; display:block;">RSVP for Open Session</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── What to Expect ── -->
+<section style="padding: 80px 24px; background: var(--primary-light);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Your First Visit</span>
+      <h2>What to Expect</h2>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; margin-top:48px; max-width:900px; margin-left:auto; margin-right:auto;">
+      <div style="text-align:center; padding: 32px 24px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--primary-dark); font-weight:600; line-height:1; margin-bottom:16px;">1</div>
+        <h4 style="margin-bottom:12px;">Meet Your Guide</h4>
+        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.7;">Connect personally with CJ or Elizabeth, who will listen to your goals and introduce the method in a relaxed, judgment-free setting.</p>
+      </div>
+      <div style="text-align:center; padding: 32px 24px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--primary-dark); font-weight:600; line-height:1; margin-bottom:16px;">2</div>
+        <h4 style="margin-bottom:12px;">Experience the Method</h4>
+        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.7;">Try a guided meditation session and feel the practice for yourself — no prior experience needed.</p>
+      </div>
+      <div style="text-align:center; padding: 32px 24px;">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--primary-dark); font-weight:600; line-height:1; margin-bottom:16px;">3</div>
+        <h4 style="margin-bottom:12px;">Ask Your Questions</h4>
+        <p style="color:var(--text-light); font-size:0.95rem; line-height:1.7;">Have all your questions answered before deciding on a membership. No pressure — just clarity about the practice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Address / Studio Info ── -->
+<section style="padding: 60px 24px; background: var(--white); border-top: 1px solid var(--border);">
+  <div class="container" style="max-width: 680px; text-align:center;">
+    <span class="section-label">Find Us</span>
+    <h2 style="margin: 16px 0 24px;">Our Studio</h2>
+    <p style="color:var(--text-light); font-size:1rem; line-height:1.8;">
+      <strong style="color:var(--dark);">Brooklyn Meditation</strong><br>
+      Park Slope, Brooklyn, NY<br>
+      <a href="mailto:info@bklynmeditation.com" style="color:var(--primary-dark);">info@bklynmeditation.com</a>
+    </p>
+    <div style="margin-top:16px; font-size:0.9rem; color:var(--text-light); line-height:1.8;">
+      Mon–Fri: 9:00 AM – 8:00 PM<br>
+      Sat–Sun: 10:15 AM – 4:00 PM
+    </div>
+    <div style="margin-top:32px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+      <a href="schedule.html" class="btn btn-secondary">View Class Schedule</a>
+      <a href="membership.html" class="btn btn-primary">See Membership Plans</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="logo.png" alt="Brooklyn Meditation" style="height:40px;" /></a>
+        <p>A quiet place to come back to yourself.<br>Park Slope, Brooklyn · Est. 2015</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <ul>
+          <li>Park Slope, Brooklyn, NY</li>
+          <li>Mon–Fri: 9AM–8PM</li>
+          <li>Sat–Sun: 10:15AM–4PM</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About the Method</a></li>
+          <li><a href="schedule.html">Class Schedule</a></li>
+          <li><a href="membership.html">Membership Plans</a></li>
+          <li><a href="events.html">Events & Workshops</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Begin</h4>
+        <ul>
+          <li><a href="book-intro.html">Book an Intro</a></li>
+          <li><a href="events.html#open">Free Open Sessions</a></li>
+          <li><a href="mailto:info@bklynmeditation.com">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Brooklyn Meditation. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+  // Mobile nav
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.add('open');
+  });
+  document.getElementById('mobileNavClose').addEventListener('click', () => {
+    document.getElementById('mobileNav').classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
