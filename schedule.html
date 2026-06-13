@@ -59,20 +59,11 @@
     .day-col .class-item {
       padding: 12px;
       border-bottom: 1px solid var(--border);
-      cursor: pointer;
-      transition: var(--transition);
-      text-decoration: none;
       display: block;
       color: inherit;
     }
     .day-col .class-item:last-child {
       border-bottom: none;
-    }
-    .day-col .class-item:hover {
-      background: var(--primary-light);
-    }
-    .day-col .class-item:hover .book-label {
-      opacity: 1;
     }
     .day-col .class-item .time {
       font-size: 0.9rem;
@@ -87,58 +78,56 @@
     .day-col .class-item .badge-row {
       margin-top: 6px;
     }
-    .book-label {
-      display: block;
-      margin-top: 6px;
+    .booking-cta {
+      background: var(--dark);
+      border-radius: var(--border-radius);
+      padding: 56px 40px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .booking-cta h2 { color: var(--white); margin-bottom: 16px; }
+    .booking-cta p { color: rgba(255,255,255,0.7); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .booking-cta .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .inperson-badge {
+      display: inline-block;
+      padding: 4px 10px;
       font-size: 0.7rem;
       font-weight: 600;
-      color: var(--primary-dark);
-      letter-spacing: 0.05em;
-      opacity: 0;
-      transition: opacity 0.2s;
+      letter-spacing: 0.02em;
+      border-radius: 20px;
+      background: #F0E9DE;
+      color: #7A5C38;
     }
     .online-badge {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 20px;
       background: #EAE8F0;
       color: #4E3D7A;
-      font-size: 0.65rem;
+    }
+    .both-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.7rem;
       font-weight: 600;
+      letter-spacing: 0.02em;
       border-radius: 20px;
+      background: #E8EEF4;
+      color: #2A4A6B;
     }
     .free-badge {
       display: inline-block;
-      padding: 2px 8px;
+      padding: 4px 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 20px;
       background: #E8F4EC;
       color: #2D7A4E;
-      font-size: 0.65rem;
-      font-weight: 600;
-      border-radius: 20px;
     }
-    .open-badge {
-      display: inline-block;
-      padding: 2px 8px;
-      background: #FFF4E0;
-      color: #8B6000;
-      font-size: 0.65rem;
-      font-weight: 600;
-      border-radius: 20px;
-    }
-    .hours-box {
-      background: var(--dark);
-      color: var(--white);
-      border-radius: var(--border-radius);
-      padding: 32px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 48px;
-    }
-    .hours-box h3 { color: var(--white); margin-bottom: 8px; }
-    .hours-box p { color: rgba(255,255,255,0.65); margin: 0; }
-    .hours-box .phone a { color: var(--primary); font-size:1.1rem; font-weight:500; text-decoration:none; }
 
     @media (max-width: 900px) {
       .week-grid { grid-template-columns: repeat(4, 1fr); }
@@ -211,98 +200,185 @@
 <section style="background: var(--bg); padding: 64px 24px;">
   <div class="container">
 
-    <!-- Hours -->
-    <div class="hours-box">
-      <div>
-        <h3>Studio Hours</h3>
-        <p>Mon – Fri: 9:00 AM – 8:00 PM</p>
-        <p>Sat – Sun: 10:15 AM – 4:00 PM</p>
-      </div>
-      <div>
-        <h3>Location</h3>
-        <p>833 Union Street, 2nd Floor</p>
-        <p>Park Slope, Brooklyn 11215</p>
-      </div>
-      <div class="phone">
-        <h3>Questions?</h3>
-        <p><a href="tel:7186221868">(718) 622-1868</a></p>
-        <p style="color:rgba(255,255,255,0.6); font-size:0.85rem;">Text: (347) 915-5099</p>
-      </div>
-    </div>
-
-    <!-- Filter -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Classes</button>
-      <button class="filter-btn" data-filter="inperson">In-Person</button>
-      <button class="filter-btn" data-filter="online">Online</button>
-      <button class="filter-btn" data-filter="free">Free Sessions</button>
-    </div>
-
     <!-- Week grid -->
     <div class="week-grid">
+
       <!-- MONDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Monday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div><span class="book-label">Book →</span></a>
+        <div class="class-item">
+          <div class="time">9:00 AM</div>
+          <div class="class-name">Morning Meditation</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">12:00 PM</div>
+          <div class="class-name">Midday Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">6:00 PM</div>
+          <div class="class-name">Evening Guided</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">7:00 PM</div>
+          <div class="class-name">Evening Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
       </div>
+
       <!-- TUESDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Tuesday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div><span class="book-label">Book →</span></a>
+        <div class="class-item">
+          <div class="time">9:00 AM</div>
+          <div class="class-name">Morning Meditation</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">12:00 PM</div>
+          <div class="class-name">Midday Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">6:00 PM</div>
+          <div class="class-name">Evening Guided</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">7:00 PM</div>
+          <div class="class-name">Evening Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
       </div>
+
       <!-- WEDNESDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Wednesday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div><span class="book-label">Book →</span></a>
+        <div class="class-item">
+          <div class="time">9:00 AM</div>
+          <div class="class-name">Morning Meditation</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">12:00 PM</div>
+          <div class="class-name">Midday Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">6:00 PM</div>
+          <div class="class-name">Evening Guided</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">7:00 PM</div>
+          <div class="class-name">Evening Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
       </div>
+
       <!-- THURSDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Thursday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">6:00 PM</div><div class="class-name">Evening Guided</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div><span class="book-label">Book →</span></a>
+        <div class="class-item">
+          <div class="time">9:00 AM</div>
+          <div class="class-name">Morning Meditation</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">12:00 PM</div>
+          <div class="class-name">Midday Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">6:00 PM</div>
+          <div class="class-name">Evening Guided</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">7:00 PM</div>
+          <div class="class-name">Evening Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
       </div>
+
       <!-- FRIDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Friday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">9:00 AM</div><div class="class-name">Morning Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">12:00 PM</div><div class="class-name">Midday Session</div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/open-intro" target="_blank"><div class="time">3:00 PM</div><div class="class-name">Open Meditation</div><div class="badge-row"><span class="free-badge">Free</span><span class="open-badge" style="margin-left:4px;">Open</span></div><span class="book-label">RSVP →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">7:00 PM</div><div class="class-name">Evening Session</div><span class="book-label">Book →</span></a>
+        <div class="class-item">
+          <div class="time">9:00 AM</div>
+          <div class="class-name">Morning Meditation</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">12:00 PM</div>
+          <div class="class-name">Midday Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
+        <div class="class-item" style="background: #F4FAF6;">
+          <div class="time">3:00 PM</div>
+          <div class="class-name">Open Meditation</div>
+          <div class="badge-row">
+            <span class="free-badge">Free Session</span>
+            <span class="inperson-badge" style="margin-left:4px;">In-Person</span>
+          </div>
+        </div>
+        <div class="class-item">
+          <div class="time">7:00 PM</div>
+          <div class="class-name">Evening Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
       </div>
+
       <!-- SATURDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Saturday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">10:15 AM</div><div class="class-name">Morning Session</div><span class="book-label">Book →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">12:00 PM</div><div class="class-name">Midday Meditation</div><div class="badge-row"><span class="online-badge">Online</span></div><span class="book-label">Book →</span></a>
+        <div class="class-item">
+          <div class="time">10:15 AM</div>
+          <div class="class-name">Morning Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
+        <div class="class-item">
+          <div class="time">12:00 PM</div>
+          <div class="class-name">Midday Meditation</div>
+          <div class="badge-row"><span class="both-badge">In-Person + Online</span></div>
+        </div>
       </div>
+
       <!-- SUNDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Sunday</div></div>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/open-intro" target="_blank"><div class="time">11:30 AM</div><div class="class-name">Open Meditation</div><div class="badge-row"><span class="free-badge">Free</span><span class="open-badge" style="margin-left:4px;">Open</span></div><span class="book-label">RSVP →</span></a>
-        <a class="class-item" href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank"><div class="time">1:00 PM</div><div class="class-name">Afternoon Session</div><span class="book-label">Book →</span></a>
+        <div class="class-item" style="background: #F4FAF6;">
+          <div class="time">11:30 AM</div>
+          <div class="class-name">Open Meditation</div>
+          <div class="badge-row">
+            <span class="free-badge">Free Session</span>
+            <span class="inperson-badge" style="margin-left:4px;">In-Person</span>
+          </div>
+        </div>
+        <div class="class-item">
+          <div class="time">1:00 PM</div>
+          <div class="class-name">Afternoon Session</div>
+          <div class="badge-row"><span class="inperson-badge">In-Person</span></div>
+        </div>
       </div>
+
     </div>
 
     <!-- Booking CTA -->
-    <div style="background:var(--white); border:1px solid var(--border); border-radius:var(--border-radius); padding:40px; text-align:center;">
-      <h3 style="margin-bottom:12px;">Ready to book a class?</h3>
-      <p style="color:var(--text-light); margin-bottom:28px;">Members can book directly via our online system. Not yet a member? Start with a free intro.</p>
-      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank" class="btn btn-primary">Book a Class →</a>
-        <a href="book-intro.html" class="btn btn-secondary">New? Book a Free Intro</a>
+    <div class="booking-cta">
+      <h2>Ready to Book Your Class?</h2>
+      <p>Find a time that works for you and reserve your spot. Classes are available in-person at our Park Slope studio and online. New to Brooklyn Meditation? Start with a free intro session.</p>
+      <div class="btn-group">
+        <a href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank" class="btn btn-primary" style="font-size:1rem; padding:16px 36px;">
+          Book a Class →
+        </a>
+        <a href="book-intro.html" class="btn btn-secondary" style="font-size:1rem; padding:16px 36px; border-color:rgba(255,255,255,0.3); color:var(--white);">
+          New? Book a Free Intro
+        </a>
       </div>
-      <p style="margin-top:20px; font-size:0.82rem; color:var(--text-light);">Clicking any class above takes you directly to the booking page.</p>
+      <p style="margin-top:24px; font-size:0.82rem; color:rgba(255,255,255,0.45);">Class booking is managed through our WellnessLiving scheduling system.</p>
     </div>
   </div>
 </section>
