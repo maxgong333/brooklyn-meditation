@@ -537,6 +537,12 @@ section {
 .step-card {
   text-align: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.step-card p {
+  flex: 1;
 }
 
 .step-number {
