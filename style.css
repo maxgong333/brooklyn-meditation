@@ -1065,11 +1065,13 @@ footer {
   /* Dark banner sections (More Than Relaxation, Community) */
   .dark-banner-grid {
     grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    gap: 24px !important;
   }
 
-  .dark-banner-grid .banner-img {
-    aspect-ratio: 16/9 !important;
-  }
+  .banner-text-top { grid-column: 1 !important; grid-row: 1 !important; }
+  .dark-banner-grid .banner-img { grid-column: 1 !important; grid-row: 2 !important; aspect-ratio: 16/9 !important; }
+  .banner-text-bottom { grid-column: 1 !important; grid-row: 3 !important; }
 }
 
 /* ── Mobile Nav Overlay ── */
