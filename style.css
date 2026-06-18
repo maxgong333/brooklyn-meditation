@@ -1061,6 +1061,15 @@ footer {
   .schedule-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Dark banner sections (More Than Relaxation, Community) */
+  .dark-banner-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dark-banner-grid .banner-img {
+    aspect-ratio: 16/9 !important;
+  }
 }
 
 /* ── Mobile Nav Overlay ── */

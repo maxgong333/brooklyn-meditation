@@ -216,7 +216,7 @@
 <!-- ── More Than Relaxation Banner ── -->
 <section style="background: var(--dark); padding: 80px 24px;">
   <div class="container">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+    <div class="dark-banner-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
 
       <!-- Left: Text -->
       <div>
@@ -237,7 +237,7 @@
       </div>
 
       <!-- Right: Image -->
-      <div style="border-radius:16px; overflow:hidden; aspect-ratio:4/3;">
+      <div class="banner-img" style="border-radius:16px; overflow:hidden; aspect-ratio:4/3;">
         <img src="meditation-group.jpg"
              alt="Group meditation at Brooklyn Meditation"
              style="width:100%; height:100%; object-fit:cover;" />
@@ -250,10 +250,10 @@
 <!-- ── Community Banner ── -->
 <section style="background: var(--dark); padding: 80px 24px;">
   <div class="container">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+    <div class="dark-banner-grid" style="display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
 
       <!-- Left: Image -->
-      <div style="border-radius:16px; overflow:hidden; aspect-ratio:4/3;">
+      <div class="banner-img" style="border-radius:16px; overflow:hidden; aspect-ratio:4/3;">
         <img src="meditation-community.jpg"
              alt="Group meditation community at Brooklyn Meditation"
              style="width:100%; height:100%; object-fit:cover;" />
@@ -463,157 +463,6 @@
 })();
 </script>
 
-<!-- ── Class Schedule Preview ── -->
-<section class="schedule-section">
-  <div class="container">
-    <div class="section-header text-center">
-      <span class="section-label">Weekly Schedule</span>
-      <h2>Classes every day of the week</h2>
-      <p>In-person at Park Slope and online — so you can practice wherever you are.</p>
-    </div>
-
-    <!-- Legend -->
-    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-bottom:32px;">
-      <span style="display:flex; align-items:center; gap:8px; font-size:0.78rem; color:rgba(255,255,255,0.65);">
-        <span style="display:inline-block; width:4px; height:18px; border-radius:2px; background:#D4B896;"></span>In-Person
-      </span>
-      <span style="display:flex; align-items:center; gap:8px; font-size:0.78rem; color:rgba(255,255,255,0.65);">
-        <span style="display:inline-block; width:4px; height:18px; border-radius:2px; background:#A8B4D8;"></span>Online
-      </span>
-      <span style="display:flex; align-items:center; gap:8px; font-size:0.78rem; color:rgba(255,255,255,0.65);">
-        <span style="display:inline-block; width:4px; height:18px; border-radius:2px; background:#F5B94A;"></span>In-Person + Online
-      </span>
-      <span style="display:flex; align-items:center; gap:8px; font-size:0.78rem; color:rgba(255,255,255,0.65);">
-        <span style="display:inline-block; width:4px; height:18px; border-radius:2px; background:#9FC4A8;"></span>Free Session
-      </span>
-    </div>
-
-    <!-- 7-col grid -->
-    <div style="display:grid; grid-template-columns:repeat(7,1fr); gap:8px;">
-
-      <!-- MONDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Monday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">6:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #D4B896;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">7:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-      <!-- TUESDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Tuesday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">6:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #D4B896;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">7:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-      <!-- WEDNESDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Wednesday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">6:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #D4B896;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">7:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-      <!-- THURSDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Thursday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">6:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #D4B896;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">7:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-      <!-- FRIDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Friday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #9FC4A8; background:rgba(159,196,168,0.1);"><span style="font-size:0.82rem;font-weight:500;color:#B8E0C4;">3:00 PM ✦ Free</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">6:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #D4B896;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">7:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-      <!-- SATURDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Saturday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #F5B94A;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-      <!-- SUNDAY -->
-      <div style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); border-radius:10px; overflow:hidden;">
-        <div style="background:rgba(255,255,255,0.06); padding:9px; text-align:center; border-bottom:1px solid rgba(255,255,255,0.08);">
-          <span style="font-size:0.62rem; font-weight:600; letter-spacing:0.12em; color:var(--primary); text-transform:uppercase;">Sunday</span>
-        </div>
-        <div style="padding:6px;">
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">10:00 AM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #9FC4A8; background:rgba(159,196,168,0.1);"><span style="font-size:0.82rem;font-weight:500;color:#B8E0C4;">11:30 AM ✦ Free</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">12:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #D4B896;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">1:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">2:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-bottom:1px solid rgba(255,255,255,0.06); border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">4:00 PM</span></div>
-          <div style="padding:9px 12px 9px 14px; border-left:5px solid #A8B4D8;"><span style="font-size:0.82rem;font-weight:500;color:rgba(255,255,255,0.9);">9:00 PM</span></div>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top:40px;">
-      <a href="schedule.html" class="btn btn-primary">Full Schedule & Booking</a>
-    </div>
-  </div>
-</section>
 
 
 <!-- ── CTA Banner ── -->
