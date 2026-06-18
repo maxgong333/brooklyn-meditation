@@ -1076,6 +1076,15 @@ footer {
   .dark-banner-grid .banner-text {
     order: 1;
   }
+
+  /* Community: text first, image below on mobile */
+  .community-banner .banner-img {
+    order: 1 !important;
+  }
+
+  .community-banner .banner-text {
+    order: -1 !important;
+  }
 }
 
 /* ── Mobile Nav Overlay ── */
