@@ -127,17 +127,16 @@
       color: #2D7A4E;
     }
 
-    /* Desktop: 4 columns */
+    /* ── Mobile Tab Schedule ── */
+    .mobile-schedule { display: none; margin-bottom: 48px; }
+
     @media (max-width: 900px) {
-      .week-grid { grid-template-columns: repeat(2, 1fr); }
+      .week-grid { grid-template-columns: repeat(4, 1fr); }
     }
     @media (max-width: 768px) {
       .week-grid { display: none; }
       .mobile-schedule { display: block; }
     }
-
-    /* ── Mobile Tab Schedule ── */
-    .mobile-schedule { display: none; margin-bottom: 48px; }
 
     .day-tabs {
       display: flex;
@@ -251,12 +250,12 @@
 <section style="background: var(--bg); padding: 64px 24px;">
   <div class="container">
 
-    <!-- Week grid (desktop: 4 columns) -->
-    <div class="week-grid" style="grid-template-columns: repeat(4, 1fr);">
+    <!-- Week grid (desktop: 7 columns) -->
+    <div class="week-grid">
 
-      <!-- MON – THU -->
+      <!-- MONDAY -->
       <div class="day-col">
-        <div class="day-header"><div class="weekday">Mon – Thu</div></div>
+        <div class="day-header"><div class="weekday">Monday</div></div>
         <div class="class-item"><div class="time">9:00 AM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
         <div class="class-item"><div class="time">10:00 AM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
         <div class="class-item"><div class="time">12:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
@@ -266,7 +265,42 @@
         <div class="class-item"><div class="time">7:00 PM</div><div class="badge-row"><span class="inperson-badge">In-Person</span></div></div>
         <div class="class-item"><div class="time">9:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
       </div>
-
+      <!-- TUESDAY -->
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Tuesday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">10:00 AM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">2:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">4:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="badge-row"><span class="inperson-badge">In-Person</span></div></div>
+        <div class="class-item"><div class="time">9:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+      </div>
+      <!-- WEDNESDAY -->
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Wednesday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">10:00 AM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">2:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">4:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="badge-row"><span class="inperson-badge">In-Person</span></div></div>
+        <div class="class-item"><div class="time">9:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+      </div>
+      <!-- THURSDAY -->
+      <div class="day-col">
+        <div class="day-header"><div class="weekday">Thursday</div></div>
+        <div class="class-item"><div class="time">9:00 AM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">10:00 AM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">12:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">2:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">4:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+        <div class="class-item"><div class="time">6:00 PM</div><div class="badge-row"><span class="both-badge">In-Person + Online</span></div></div>
+        <div class="class-item"><div class="time">7:00 PM</div><div class="badge-row"><span class="inperson-badge">In-Person</span></div></div>
+        <div class="class-item"><div class="time">9:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
+      </div>
       <!-- FRIDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Friday</div></div>
@@ -283,7 +317,6 @@
         <div class="class-item"><div class="time">7:00 PM</div><div class="badge-row"><span class="inperson-badge">In-Person</span></div></div>
         <div class="class-item"><div class="time">9:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
       </div>
-
       <!-- SATURDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Saturday</div></div>
@@ -293,7 +326,6 @@
         <div class="class-item"><div class="time">4:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
         <div class="class-item"><div class="time">9:00 PM</div><div class="badge-row"><span class="online-badge">Online</span></div></div>
       </div>
-
       <!-- SUNDAY -->
       <div class="day-col">
         <div class="day-header"><div class="weekday">Sunday</div></div>
