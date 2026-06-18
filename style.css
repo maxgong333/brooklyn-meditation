@@ -1069,12 +1069,7 @@ footer {
   }
 
   .dark-banner-grid .banner-img {
-    order: -1;
     aspect-ratio: 4/3;
-  }
-
-  .dark-banner-grid .banner-text {
-    order: 1;
   }
 
   /* Community: text first, image below on mobile */
