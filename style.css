@@ -1021,8 +1021,7 @@ footer {
     --section-padding: 56px 20px;
   }
 
-  .navbar-nav,
-  .navbar-actions .btn-secondary {
+  .navbar-nav {
     display: none;
   }
 
@@ -1030,9 +1029,10 @@ footer {
     display: flex;
   }
 
-  .navbar-actions .btn-primary {
-    padding: 8px 18px;
-    font-size: 0.8rem;
+  .navbar-actions .btn-primary,
+  .navbar-actions .btn-secondary {
+    padding: 7px 14px;
+    font-size: 0.75rem;
   }
 
   .hero-cta {
