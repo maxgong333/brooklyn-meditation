@@ -130,8 +130,64 @@
     @media (max-width: 900px) {
       .week-grid { grid-template-columns: repeat(4, 1fr); }
     }
-    @media (max-width: 600px) {
-      .week-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 768px) {
+      .week-grid { display: none; }
+      .mobile-schedule { display: block; }
+    }
+
+    /* ── Mobile Tab Schedule ── */
+    .mobile-schedule { display: none; margin-bottom: 48px; }
+
+    .day-tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      margin-bottom: 20px;
+      scrollbar-width: none;
+    }
+    .day-tabs::-webkit-scrollbar { display: none; }
+
+    .day-tab {
+      flex: 0 0 auto;
+      padding: 9px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    .day-tab.active {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      color: var(--white);
+    }
+
+    .day-panel { display: none; }
+    .day-panel.active { display: block; }
+
+    .mobile-class-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 8px;
+    }
+    .mobile-class-item.free-slot {
+      background: #F4FAF6;
+      border-color: #C5E2CE;
+    }
+    .mobile-class-time {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--dark);
     }
   </style>
 </head>
@@ -297,6 +353,93 @@
 
     </div>
 
+    <!-- Mobile Tab Schedule -->
+    <div class="mobile-schedule">
+      <div class="day-tabs">
+        <button class="day-tab" data-day="mon">Mon</button>
+        <button class="day-tab" data-day="tue">Tue</button>
+        <button class="day-tab" data-day="wed">Wed</button>
+        <button class="day-tab" data-day="thu">Thu</button>
+        <button class="day-tab" data-day="fri">Fri</button>
+        <button class="day-tab" data-day="sat">Sat</button>
+        <button class="day-tab" data-day="sun">Sun</button>
+      </div>
+
+      <div class="day-panel" id="tab-mon">
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 AM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">6:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">7:00 PM</span><span class="inperson-badge">In-Person</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+
+      <div class="day-panel" id="tab-tue">
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 AM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">6:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">7:00 PM</span><span class="inperson-badge">In-Person</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+
+      <div class="day-panel" id="tab-wed">
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 AM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">6:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">7:00 PM</span><span class="inperson-badge">In-Person</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+
+      <div class="day-panel" id="tab-thu">
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 AM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">6:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">7:00 PM</span><span class="inperson-badge">In-Person</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+
+      <div class="day-panel" id="tab-fri">
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 AM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item free-slot"><span class="mobile-class-time">3:00 PM</span><span style="display:flex;gap:4px;"><span class="free-badge">Free</span><span class="inperson-badge">In-Person</span></span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">6:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">7:00 PM</span><span class="inperson-badge">In-Person</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+
+      <div class="day-panel" id="tab-sat">
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="both-badge">In-Person + Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+
+      <div class="day-panel" id="tab-sun">
+        <div class="mobile-class-item"><span class="mobile-class-time">10:00 AM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item free-slot"><span class="mobile-class-time">11:30 AM</span><span style="display:flex;gap:4px;"><span class="free-badge">Free</span><span class="inperson-badge">In-Person</span></span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">12:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">1:00 PM</span><span class="inperson-badge">In-Person</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">2:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">4:00 PM</span><span class="online-badge">Online</span></div>
+        <div class="mobile-class-item"><span class="mobile-class-time">9:00 PM</span><span class="online-badge">Online</span></div>
+      </div>
+    </div>
+
     <!-- Booking CTA -->
     <div class="booking-cta">
       <h2>Ready to Book Your Class?</h2>
@@ -368,6 +511,24 @@
 </footer>
 
 <script>
+  // Mobile day tabs
+  const days = ['sun','mon','tue','wed','thu','fri','sat'];
+  const todayKey = days[new Date().getDay()];
+  const tabs = document.querySelectorAll('.day-tab');
+  const panels = document.querySelectorAll('.day-panel');
+
+  function activateTab(day) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.day === day));
+    panels.forEach(p => p.classList.toggle('active', p.id === 'tab-' + day));
+  }
+
+  // Default to today, fallback to Monday
+  activateTab(days.includes(todayKey) ? todayKey : 'mon');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab.dataset.day));
+  });
+
   window.addEventListener('scroll', () => {
     document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
   });
