@@ -97,16 +97,29 @@
   </div>
 </div>
 
-<!-- ── Hero ── -->
+<!-- ── Hero Carousel ── -->
 <section class="hero">
-  <div class="hero-bg">
-    <img src="https://static.wixstatic.com/media/nsplsh_67413869556f575976546b~mv2_d_4608_3456_s_4_2.jpg/v1/fill/w_1600,h_1067,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/nsplsh_67413869556f575976546b~mv2_d_4608_3456_s_4_2.jpg"
-         alt="Peaceful meditation space at Brooklyn Meditation" />
+
+  <!-- Background slides -->
+  <div class="hero-slides">
+    <div class="hero-slide active" style="background-image: url('hero1.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('hero2.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('hero3.jpg');"></div>
   </div>
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
   <div class="hero-content">
     <span class="hero-eyebrow">Park Slope, Brooklyn · Est. 2015</span>
-    <h1>Everything You Seek is<br>Within Your Mind</h1>
-    <p class="hero-sub">A simple, systematic method to cleanse away stress and anxiety and uncover lasting peace.</p>
+
+    <!-- Rotating headings -->
+    <div class="hero-headings">
+      <h1 class="hero-heading active">Everything You Seek is<br>Within Your Mind</h1>
+      <h1 class="hero-heading">Peace You Seek is<br>Within Your Mind</h1>
+      <h1 class="hero-heading">Happiness You Seek is<br>Within Your Mind</h1>
+    </div>
+
+    <p class="hero-sub"><strong style="color:var(--white); font-weight:500;">Reduce stress. Clear your mind. Live more steadily.</strong><br>Guided meditation in Park Slope with a simple daily practice for lasting inner calm.</p>
     <div class="hero-cta">
       <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary">Book a Free Intro</a>
       <a href="#how-it-works" class="btn btn-outline-white">
@@ -116,6 +129,14 @@
         How It Works
       </a>
     </div>
+
+    <!-- Dot indicators -->
+    <div class="hero-dots">
+      <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+    </div>
+
     <div class="hero-stats">
       <div class="hero-stat">
         <div class="stat-num">10+</div>
@@ -137,21 +158,6 @@
   </div>
 </section>
 
-<!-- ── More Than Relaxation ── -->
-<section style="padding: 80px 24px; background: var(--primary-dark);">
-  <div class="container">
-    <div style="max-width: 640px;">
-      <span class="section-label" style="color: var(--primary-light);">More Than Relaxation</span>
-      <h2 style="color: var(--white); margin-bottom: 24px;">A Path to<br>Lasting Change</h2>
-      <p style="color: rgba(255,255,255,0.82); font-size: 1.05rem; line-height: 1.9; margin-bottom: 16px;">
-        At Brooklyn Meditation, we go beyond temporary calm — we help you remove the root cause of cluttered, unnecessary thoughts. Through a step-by-step process of self-reflection and letting go, you can thoroughly cleanse your mind and experience lasting happiness.
-      </p>
-      <p style="color: rgba(255,255,255,0.75); margin-bottom: 32px;">
-        We offer <strong style="color:var(--primary-light);">live guided meditation classes</strong>, available both <strong style="color:var(--primary-light);">in-person in Park Slope</strong> and <strong style="color:var(--primary-light);">online 7 days a week</strong>, making it easy to stay consistent and supported, wherever you are.
-      </p>
-    </div>
-  </div>
-</section>
 
 <!-- ── Clear Simple Systematic ── -->
 <!-- ── 3 Ways to Begin ── -->
@@ -162,51 +168,54 @@
       <h2>3 Ways to Learn More</h2>
       <p>Discover how meditation can transform your life — at your own pace.</p>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap:40px; margin-top:56px; text-align:center;">
+    <div class="ways-grid">
 
       <!-- 1 -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
-        <div style="width:72px; height:72px; display:flex; align-items:center; justify-content:center;">
-          <svg viewBox="0 0 48 48" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="way-card">
+        <div class="way-icon">
+          <svg viewBox="0 0 48 48" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="4" y="10" width="30" height="22" rx="3" stroke="var(--primary-dark)" stroke-width="2.5" fill="var(--primary-light)"/>
             <path d="M34 18l10-6v20l-10-6V18z" fill="var(--primary-dark)"/>
           </svg>
         </div>
-        <h3 style="font-size:1.25rem; color:var(--primary-dark); margin:0;">Book a 1-on-1 Trial Session</h3>
-        <p style="color:var(--text-light); line-height:1.8; margin:0; flex:1;">Experience a personal guided meditation and explore the method in a private setting with one of our instructors.</p>
-        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary" style="margin-top:8px;">Book Now</a>
+        <div class="way-number">01</div>
+        <h3>Book a 1-on-1 Trial Session</h3>
+        <p>Experience a personal guided meditation and explore the method in a private setting with one of our instructors.</p>
+        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary way-btn">Book Now</a>
       </div>
 
       <!-- 2 -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
-        <div style="width:72px; height:72px; display:flex; align-items:center; justify-content:center;">
-          <svg viewBox="0 0 48 48" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="way-card">
+        <div class="way-icon">
+          <svg viewBox="0 0 48 48" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="4" width="36" height="40" rx="3" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2.5"/>
             <path d="M14 16h20M14 23h20M14 30h12" stroke="var(--primary-dark)" stroke-width="2" stroke-linecap="round"/>
             <circle cx="36" cy="34" r="8" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2.5"/>
             <path d="M36 30v4l3 2" stroke="var(--primary-dark)" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </div>
-        <h3 style="font-size:1.25rem; color:var(--primary-dark); margin:0;">Book a Free Consultation</h3>
-        <p style="color:var(--text-light); line-height:1.8; margin:0; flex:1;">Chat with a meditation guide to ask questions, learn how it works, and see what program fits your needs.</p>
-        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary" style="margin-top:8px;">Book Now</a>
+        <div class="way-number">02</div>
+        <h3>Book a Free Consultation</h3>
+        <p>Chat with a meditation guide to ask questions, learn how it works, and see what program fits your needs.</p>
+        <a href="https://calendly.com/bklyn-meditation-intros" target="_blank" class="btn btn-primary way-btn">Book Now</a>
       </div>
 
       <!-- 3 -->
-      <div style="display:flex; flex-direction:column; align-items:center; gap:20px;">
-        <div style="width:72px; height:72px; display:flex; align-items:center; justify-content:center;">
-          <svg viewBox="0 0 48 48" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="way-card">
+        <div class="way-icon">
+          <svg viewBox="0 0 48 48" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24" cy="14" r="7" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2.5"/>
             <circle cx="10" cy="18" r="5" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2"/>
             <circle cx="38" cy="18" r="5" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2"/>
             <path d="M6 40c0-6.627 4.03-12 9-12" stroke="var(--primary-dark)" stroke-width="2" stroke-linecap="round"/>
             <path d="M42 40c0-6.627-4.03-12-9-12" stroke="var(--primary-dark)" stroke-width="2" stroke-linecap="round"/>
-            <path d="M10 40c0-7.732 6.268-14 14-14s14 6.268 14 40H10z" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2.5"/>
+            <path d="M10 40c0-7.732 6.268-14 14-14s14 6.268 14 14H10z" fill="var(--primary-light)" stroke="var(--primary-dark)" stroke-width="2.5"/>
           </svg>
         </div>
-        <h3 style="font-size:1.25rem; color:var(--primary-dark); margin:0;">Join a Free Open Session</h3>
-        <p style="color:var(--text-light); line-height:1.8; margin:0; flex:1;">Join others in an introductory group session to experience meditation and meet our community. No signup needed.</p>
-        <a href="events.html#open" class="btn btn-primary" style="margin-top:8px;">Book Now</a>
+        <div class="way-number">03</div>
+        <h3>Join a Free Open Session</h3>
+        <p>Join others in an introductory group session to experience meditation and meet our community. No signup needed.</p>
+        <a href="events.html#open" class="btn btn-primary way-btn">Book Now</a>
       </div>
 
     </div>
@@ -548,6 +557,39 @@
 </footer>
 
 <script>
+  // ── Hero Carousel ──
+  (function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const headings = document.querySelectorAll('.hero-heading');
+    const dots = document.querySelectorAll('.hero-dot');
+    let current = 0;
+    let timer;
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      headings[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      headings[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function startTimer() {
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(timer);
+        goTo(i);
+        startTimer();
+      });
+    });
+
+    startTimer();
+  })();
+
   // Navbar scroll effect
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {

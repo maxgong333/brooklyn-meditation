@@ -293,7 +293,7 @@ section {
   transition: var(--transition);
 }
 
-/* ── Hero ── */
+/* ── Hero Carousel ── */
 .hero {
   min-height: 100vh;
   position: relative;
@@ -302,29 +302,88 @@ section {
   overflow: hidden;
 }
 
-.hero-bg {
+/* Slide backgrounds */
+.hero-slides {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.55);
-}
-
-.hero-bg::after {
-  content: '';
+.hero-slide {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(44,36,22,0.5) 0%, rgba(200,168,130,0.2) 100%);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* Dark overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(44,36,22,0.6) 0%, rgba(200,168,130,0.15) 100%);
+}
+
+/* Headings — grid-stack so all occupy the same cell */
+.hero-headings {
+  display: grid;
+  margin-bottom: 24px;
+}
+
+.hero-heading {
+  grid-area: 1 / 1;
+  color: var(--white);
+  max-width: 700px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  pointer-events: none;
+}
+
+.hero-heading.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Dots */
+.hero-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 32px;
+  margin-bottom: 8px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-dot.active {
+  background: var(--primary);
+  transform: scale(1.3);
+}
+
+.hero-dot:hover {
+  background: rgba(255,255,255,0.6);
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 24px;
@@ -510,6 +569,93 @@ section {
 .author-info .source {
   font-size: 0.8rem;
   color: var(--text-light);
+}
+
+/* ── 3 Ways Cards ── */
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
+
+.way-card {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 32px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.way-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--primary);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.way-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 12px 40px rgba(44,36,22,0.09);
+  transform: translateY(-4px);
+}
+
+.way-card:hover::before {
+  opacity: 1;
+}
+
+.way-icon {
+  background: var(--primary-light);
+  border-radius: 14px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.way-number {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+}
+
+.way-card h3 {
+  font-size: 1.25rem;
+  color: var(--dark);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.way-card p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.way-btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .ways-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 /* ── Steps / How it Works ── */
