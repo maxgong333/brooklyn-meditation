@@ -247,8 +247,23 @@
   <p style="max-width:500px; margin:16px auto 0;">In-person at Park Slope and live online — find a time that works for you.</p>
 </div>
 
-<section style="background: var(--bg); padding: 64px 24px;">
+<section style="background: var(--bg); padding: 48px 24px 64px;">
   <div class="container">
+
+    <!-- Tab buttons -->
+    <div style="display:flex; gap:8px; margin-bottom:40px; background:var(--white); border:1px solid var(--border); border-radius:50px; padding:6px; width:fit-content;">
+      <button id="tab-schedule" onclick="switchTab('schedule')"
+        style="padding:12px 32px; border-radius:50px; border:none; cursor:pointer; font-family:var(--font-body); font-size:0.95rem; font-weight:600; background:var(--primary-dark); color:var(--white); transition:all 0.2s;">
+        Class Schedule
+      </button>
+      <button id="tab-book" onclick="switchTab('book')"
+        style="padding:12px 32px; border-radius:50px; border:none; cursor:pointer; font-family:var(--font-body); font-size:0.95rem; font-weight:600; background:transparent; color:var(--text-light); transition:all 0.2s;">
+        Book a Class
+      </button>
+    </div>
+
+    <!-- Tab: Schedule -->
+    <div id="panel-schedule">
 
     <!-- 7 Day Center Schedule (Hybrid) -->
     <div style="margin-bottom:56px;">
@@ -427,21 +442,57 @@
       </div>
     </div>
 
-    <!-- Booking CTA -->
-    <div class="booking-cta">
-      <h2>Ready to Book Your Class?</h2>
-      <p>Find a time that works for you. Classes are available in-person at our Park Slope studio (Hybrid) and online via the NA Virtual Group. New to Brooklyn Meditation? Start with a trial session.</p>
+    <!-- Booking CTA (inside schedule tab) -->
+    <div class="booking-cta" style="margin-top:48px;">
+      <h2>Ready to Book?</h2>
+      <p>Switch to the "Book a Class" tab above to reserve your spot directly.</p>
       <div class="btn-group">
-        <a href="https://www.brooklynmeditation.nyc/meditation-schedule" target="_blank" class="btn btn-primary" style="font-size:1rem; padding:16px 36px;">
+        <button onclick="switchTab('book')" class="btn btn-primary" style="font-size:1rem; padding:16px 36px; border:none; cursor:pointer;">
           Book a Class →
-        </a>
+        </button>
         <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-secondary" style="font-size:1rem; padding:16px 36px; border-color:rgba(255,255,255,0.3); color:var(--white);">
           Book Trial Session
         </a>
       </div>
     </div>
+
+    </div><!-- end panel-schedule -->
+
+    <!-- Tab: Book a Class -->
+    <div id="panel-book" style="display:none;">
+      <div style="border-radius:var(--border-radius); overflow:hidden; border:1px solid var(--border); background:var(--white);">
+        <script type="module" src="https://widgets.wellnessliving.com/schedule/widget.js"></script>
+        <wl-schedule-widget k_business="760342" k_schema="01a04422-130f-7354-99cd-afdf07b23cb7"></wl-schedule-widget>
+      </div>
+    </div><!-- end panel-book -->
+
   </div>
 </section>
+
+<script>
+function switchTab(tab) {
+  var schedulePanel = document.getElementById('panel-schedule');
+  var bookPanel = document.getElementById('panel-book');
+  var scheduleBtn = document.getElementById('tab-schedule');
+  var bookBtn = document.getElementById('tab-book');
+
+  if (tab === 'schedule') {
+    schedulePanel.style.display = 'block';
+    bookPanel.style.display = 'none';
+    scheduleBtn.style.background = 'var(--primary-dark)';
+    scheduleBtn.style.color = 'var(--white)';
+    bookBtn.style.background = 'transparent';
+    bookBtn.style.color = 'var(--text-light)';
+  } else {
+    schedulePanel.style.display = 'none';
+    bookPanel.style.display = 'block';
+    bookBtn.style.background = 'var(--primary-dark)';
+    bookBtn.style.color = 'var(--white)';
+    scheduleBtn.style.background = 'transparent';
+    scheduleBtn.style.color = 'var(--text-light)';
+  }
+}
+</script>
 
 <!-- Footer -->
 <footer>
