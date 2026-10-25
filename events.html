@@ -309,6 +309,118 @@
   </div>
 </section>
 
+<!-- ── Client Logo Marquee ── -->
+<section style="background: #1a1f24; padding: 40px 0; overflow:hidden; border-top: 1px solid rgba(255,255,255,0.08);">
+  <p style="text-align:center; color:rgba(255,255,255,0.35); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 28px;">Trusted by organizations across industries</p>
+  <div class="logo-marquee-wrapper" style="overflow:hidden; position:relative;">
+    <!-- Fade edges -->
+    <div style="position:absolute; left:0; top:0; bottom:0; width:120px; background:linear-gradient(to right, #1a1f24, transparent); z-index:2;"></div>
+    <div style="position:absolute; right:0; top:0; bottom:0; width:120px; background:linear-gradient(to left, #1a1f24, transparent); z-index:2;"></div>
+    <div class="logo-marquee-track">
+      <!-- Set 1 -->
+      <div class="logo-item"><img src="https://logo.clearbit.com/nyu.edu" alt="NYU" /><span>NYU</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/yelp.com" alt="Yelp" /><span>Yelp</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/shutterstock.com" alt="Shutterstock" /><span>Shutterstock</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/schwab.com" alt="Charles Schwab" /><span>Charles Schwab</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/spanx.com" alt="SPANX" /><span>SPANX</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/aarp.org" alt="AARP" /><span>AARP</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/aceable.com" alt="Aceable" /><span>Aceable</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/solar1.org" alt="SolarOne" /><span>SolarOne</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/amherst.edu" alt="Amherst" /><span>Amherst</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/issueone.org" alt="Issue One" /><span>Issue One</span></div>
+      <div class="logo-item logo-text">PM Pediatrics</div>
+      <div class="logo-item logo-text">Tocci Chiropractic</div>
+      <div class="logo-item logo-text">Palomino Park Resort</div>
+      <div class="logo-item logo-text">Konjo Beauty</div>
+      <div class="logo-item logo-text">Tae Bo Nation</div>
+      <div class="logo-item logo-text">FirstTrust</div>
+      <div class="logo-item logo-text">Charge</div>
+      <div class="logo-item logo-text">Square Unboxed</div>
+      <!-- Set 2 (duplicate for seamless loop) -->
+      <div class="logo-item"><img src="https://logo.clearbit.com/nyu.edu" alt="NYU" /><span>NYU</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/yelp.com" alt="Yelp" /><span>Yelp</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/shutterstock.com" alt="Shutterstock" /><span>Shutterstock</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/schwab.com" alt="Charles Schwab" /><span>Charles Schwab</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/spanx.com" alt="SPANX" /><span>SPANX</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/aarp.org" alt="AARP" /><span>AARP</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/aceable.com" alt="Aceable" /><span>Aceable</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/solar1.org" alt="SolarOne" /><span>SolarOne</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/amherst.edu" alt="Amherst" /><span>Amherst</span></div>
+      <div class="logo-item"><img src="https://logo.clearbit.com/issueone.org" alt="Issue One" /><span>Issue One</span></div>
+      <div class="logo-item logo-text">PM Pediatrics</div>
+      <div class="logo-item logo-text">Tocci Chiropractic</div>
+      <div class="logo-item logo-text">Palomino Park Resort</div>
+      <div class="logo-item logo-text">Konjo Beauty</div>
+      <div class="logo-item logo-text">Tae Bo Nation</div>
+      <div class="logo-item logo-text">FirstTrust</div>
+      <div class="logo-item logo-text">Charge</div>
+      <div class="logo-item logo-text">Square Unboxed</div>
+    </div>
+  </div>
+</section>
+
+<style>
+.logo-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: marquee-scroll 40s linear infinite;
+}
+.logo-marquee-track:hover { animation-play-state: paused; }
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 36px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+  height: 56px;
+}
+.logo-item img {
+  height: 32px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+.logo-item img:not([src]), .logo-item img[src=""] { display: none; }
+.logo-item span {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.logo-item.logo-text {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+</style>
+
+<!-- ── Corporate Workshop Photos ── -->
+<section style="background:#1a1f24; padding: 0 24px 64px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; max-width:960px; margin:0 auto;">
+      <div style="grid-column: span 2;">
+        <img src="corporate_workshop_4.jpg" alt="Corporate meditation workshop" style="width:100%; height:320px; object-fit:cover; border-radius:16px; display:block;" />
+      </div>
+      <img src="corporate_workshop_1.jpg" alt="Corporate meditation session" style="width:100%; height:220px; object-fit:cover; border-radius:16px; display:block;" />
+      <img src="corporate_workshop_2.jpg" alt="Meditation workshop group" style="width:100%; height:220px; object-fit:cover; border-radius:16px; display:block;" />
+      <div style="grid-column: span 2;">
+        <img src="corporate_workshop_3.jpg" alt="Workplace meditation program" style="width:100%; height:280px; object-fit:cover; object-position: center 30%; border-radius:16px; display:block;" />
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── Acts of Service ── -->
 <section style="background: var(--white); padding: 80px 24px;">
   <div class="container">
@@ -321,6 +433,14 @@
         <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-primary">Get Involved</a>
         <a href="#" class="btn btn-secondary">Donate</a>
       </div>
+    </div>
+
+    <!-- Acts of Service Photos -->
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; max-width:900px; margin:48px auto 0;">
+      <img src="aos_photo_1.jpg" alt="Brooklyn Meditation volunteers" style="width:100%; height:260px; object-fit:cover; object-position:center top; border-radius:14px; display:block;" />
+      <img src="aos_photo_2.jpg" alt="Community service volunteers" style="width:100%; height:260px; object-fit:cover; border-radius:14px; display:block;" />
+      <img src="aos_photo_3.jpg" alt="Soup kitchen volunteers" style="width:100%; height:260px; object-fit:cover; border-radius:14px; display:block;" />
+      <img src="aos_photo_4.jpg" alt="Brooklyn College Academy event" style="width:100%; height:260px; object-fit:cover; border-radius:14px; display:block;" />
     </div>
   </div>
 </section>
