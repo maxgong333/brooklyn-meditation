@@ -299,7 +299,7 @@
     </div>
 
     <p style="text-align:center; margin-top:32px; font-size:0.875rem; color:var(--text-light);">
-      Questions? <a href="mailto:info@bklynmeditation.com" style="color:var(--primary-dark); font-weight:500;">Email us</a> or call (718) 622-1868.
+      Questions? <a href="mailto:info@bklynmeditation.com" style="color:var(--primary-dark); font-weight:500;" onclick="if(!/Android|iPhone|iPad/i.test(navigator.userAgent)){event.preventDefault();navigator.clipboard.writeText('info@bklynmeditation.com').then(function(){var el=document.currentScript||event.target;var orig=el.textContent;el.textContent='✓ Copied!';setTimeout(function(){el.textContent=orig;},2000);});}">Email us</a> or call <a href="tel:7186221868" style="color:var(--primary-dark); font-weight:500;">(718) 622-1868</a>.
     </p>
   </div>
 </section>
