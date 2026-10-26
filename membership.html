@@ -343,7 +343,21 @@
     <div class="btn-group">
       <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary">Book Trial — In-Person</a>
       <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-primary">Book Trial — Online</a>
-      <a href="mailto:info@bklynmeditation.com" class="btn btn-secondary">Email Us</a>
+      <a href="mailto:info@bklynmeditation.com" class="btn btn-secondary" id="email-btn" onclick="copyEmail(event)">Email Us</a>
+      <script>
+      function copyEmail(e) {
+        var btn = document.getElementById('email-btn');
+        // Try to open mail client first; if on desktop fallback to clipboard
+        var isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+        if (!isMobile) {
+          e.preventDefault();
+          navigator.clipboard.writeText('info@bklynmeditation.com').then(function() {
+            btn.textContent = '✓ Copied!';
+            setTimeout(function() { btn.textContent = 'Email Us'; }, 2000);
+          });
+        }
+      }
+      </script>
     </div>
   </div>
 </section>
