@@ -299,7 +299,7 @@
     </div>
 
     <p style="text-align:center; margin-top:32px; font-size:0.875rem; color:var(--text-light);">
-      Questions? <a href="mailto:info@bklynmeditation.com" style="color:var(--primary-dark); font-weight:500;" onclick="if(!/Android|iPhone|iPad/i.test(navigator.userAgent)){event.preventDefault();navigator.clipboard.writeText('info@bklynmeditation.com').then(function(){var el=document.currentScript||event.target;var orig=el.textContent;el.textContent='✓ Copied!';setTimeout(function(){el.textContent=orig;},2000);});}">Email us</a> or call <a href="tel:7186221868" style="color:var(--primary-dark); font-weight:500;">(718) 622-1868</a>.
+      Questions? <a href="https://mail.google.com/mail/?view=cm&to=info@bklynmeditation.com&su=Inquiry" target="_blank" style="color:var(--primary-dark); font-weight:500;" onclick="if(!/Android|iPhone|iPad/i.test(navigator.userAgent)){event.preventDefault();navigator.clipboard.writeText('info@bklynmeditation.com').then(function(){var el=document.currentScript||event.target;var orig=el.textContent;el.textContent='✓ Copied!';setTimeout(function(){el.textContent=orig;},2000);});}">Email us</a> or call <a href="tel:7186221868" style="color:var(--primary-dark); font-weight:500;">(718) 622-1868</a>.
     </p>
   </div>
 </section>
@@ -352,21 +352,7 @@
     <div class="btn-group">
       <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary">Book a Private Intro — In-Person</a>
       <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-primary">Book a Private Intro — Online</a>
-      <a href="mailto:info@bklynmeditation.com" class="btn btn-secondary" id="email-btn" onclick="copyEmail(event)">Email Us</a>
-      <script>
-      function copyEmail(e) {
-        var btn = document.getElementById('email-btn');
-        // Try to open mail client first; if on desktop fallback to clipboard
-        var isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-        if (!isMobile) {
-          e.preventDefault();
-          navigator.clipboard.writeText('info@bklynmeditation.com').then(function() {
-            btn.textContent = '✓ Copied!';
-            setTimeout(function() { btn.textContent = 'Email Us'; }, 2000);
-          });
-        }
-      }
-      </script>
+      <a href="https://mail.google.com/mail/?view=cm&to=info@bklynmeditation.com&su=Inquiry" target="_blank" class="btn btn-secondary" onclick="copyEmail(event)">Email Us</a>
     </div>
   </div>
 </section>
@@ -381,7 +367,7 @@
         <p>A guided meditation practice for lasting peace, clarity, and joy.</p>
         <div class="footer-contact-info">
           <a href="tel:7186221868">📞 (718) 622-1868</a>
-          <a href="mailto:info@bklynmeditation.com">✉ info@bklynmeditation.com</a>
+          <a href="https://mail.google.com/mail/?view=cm&to=info@bklynmeditation.com&su=Inquiry" target="_blank">✉ info@bklynmeditation.com</a>
           <a href="https://maps.google.com/?q=833+Union+Street+Brooklyn+NY" target="_blank">📍 833 Union St, 2nd Floor, Park Slope 11215</a>
         </div>
       </div>
