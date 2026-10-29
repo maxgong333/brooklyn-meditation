@@ -119,8 +119,26 @@
 
     <p class="hero-sub"><strong style="color:var(--white); font-weight:500;">Reduce stress. Clear your mind. Live more steadily.</strong><br>Guided meditation in Park Slope with a simple daily practice for lasting inner calm.</p>
     <div class="hero-cta">
-      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary">Book a Private Intro — In-Person</a>
-      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-outline-white">Book a Private Intro — Online</a>
+      <!-- Desktop: two separate buttons -->
+      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary book-intro-desktop">Book a Private Intro — In-Person</a>
+      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-outline-white book-intro-desktop">Book a Private Intro — Online</a>
+      <!-- Mobile: dropdown -->
+      <div class="book-dropdown book-intro-mobile">
+        <button class="btn btn-primary book-dropdown-toggle" onclick="this.closest('.book-dropdown').classList.toggle('open')">
+          Book a Private Intro
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:6px; transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="book-dropdown-menu">
+          <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="book-dropdown-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            In-Person
+          </a>
+          <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="book-dropdown-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Online
+          </a>
+        </div>
+      </div>
       <a href="events.html#open" class="btn btn-outline-white">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16 10,8"/>
@@ -166,7 +184,7 @@
       <h2>3 Ways to Learn More</h2>
       <p>Learn how to let go of stress, anxiety, and accumulated thoughts through a simple and practical meditation method.</p>
     </div>
-    <div class="ways-grid">
+    <div class="ways-grid" id="waysGrid">
 
       <!-- 1 -->
       <div class="way-card">
@@ -178,7 +196,7 @@
         </div>
         <div class="way-number">01</div>
         <h3>Book a Private Intro</h3>
-        <p>Experience a personal guided meditation session with one of our instructors. Includes guided meditation.</p>
+        <p>A 1:1 guided meditation session with an instructor.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary way-btn">In-Person</a>
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-secondary way-btn">Online</a>
@@ -197,7 +215,7 @@
         </div>
         <div class="way-number">02</div>
         <h3>Free 30 Min Consultation</h3>
-        <p>Chat with a meditation guide to ask questions and learn how it works. Does not include meditation — Q&amp;A only.</p>
+        <p>Q&amp;A with a guide. Ask anything — no meditation included.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:20px;">
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75478&k_service=304065" target="_blank" class="btn btn-primary way-btn">In-Person</a>
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75478&k_service=308095" target="_blank" class="btn btn-secondary way-btn">Online</a>
@@ -217,11 +235,17 @@
           </svg>
         </div>
         <div class="way-number">03</div>
-        <h3>Join a Free Open Session</h3>
-        <p>Join others in an introductory group session to experience meditation and meet our community.</p>
+        <h3>Free Open Session</h3>
+        <p>Drop in to a group intro class. No registration required.</p>
         <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-primary way-btn">Register</a>
       </div>
 
+    </div>
+    <!-- Swipe dots (mobile only) -->
+    <div class="ways-dots">
+      <span class="ways-dot active"></span>
+      <span class="ways-dot"></span>
+      <span class="ways-dot"></span>
     </div>
   </div>
 </section>
@@ -244,7 +268,7 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           <span style="color:rgba(255,255,255,0.85); font-size:0.95rem; font-weight:500;">Live guided classes · In-person & Online · 7 days a week</span>
         </div>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div class="banner-book-btns" style="display:flex; gap:12px; flex-wrap:wrap;">
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary" style="font-size:1rem; padding:16px 36px;">Book a Private Intro — In-Person</a>
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-primary" style="font-size:1rem; padding:16px 36px;">Book a Private Intro — Online</a>
         </div>
@@ -284,68 +308,63 @@
     <div class="section-header">
       <span class="section-label">Benefits</span>
       <h2>What changes when you meditate</h2>
-      <p>Thousands of practitioners have found that this practice reaches the root — not just the symptoms. Read their stories.</p>
+      <p>Thousands of practitioners have found that this practice reaches the root — not just the symptoms.</p>
     </div>
 
-    <!-- Tab Buttons -->
-    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:48px;">
+    <!-- Tab Buttons (desktop only) -->
+    <div class="benefits-tabs" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:48px;">
       <button onclick="showTestimonial('clarity')" id="btn-clarity"
         style="padding:14px 28px; border-radius:50px; border:2px solid var(--primary-dark); background:var(--primary-dark); color:#fff; font-size:0.95rem; font-family:inherit; cursor:pointer; transition:all 0.2s; font-weight:500;">
         🌿 Objectivity &amp; Clarity
       </button>
       <button onclick="showTestimonial('concentration')" id="btn-concentration"
         style="padding:14px 28px; border-radius:50px; border:2px solid var(--primary-dark); background:transparent; color:var(--primary-dark); font-size:0.95rem; font-family:inherit; cursor:pointer; transition:all 0.2s; font-weight:500;">
-        ⚡ Improved Concentration
+        ⚡ Concentration
       </button>
       <button onclick="showTestimonial('past')" id="btn-past"
         style="padding:14px 28px; border-radius:50px; border:2px solid var(--primary-dark); background:transparent; color:var(--primary-dark); font-size:0.95rem; font-family:inherit; cursor:pointer; transition:all 0.2s; font-weight:500;">
-        🧠 Letting Go of the Past
+        🧠 Letting Go
       </button>
     </div>
 
-    <!-- Testimonial Panels -->
-    <div id="testimonial-clarity" style="max-width:780px; margin:0 auto; background:var(--white); border-radius:20px; padding:48px 52px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,0.06);">
-      <div style="font-size:2.5rem; color:var(--primary); margin-bottom:20px; line-height:1;">"</div>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Before meditation, I was a master ruminator, always in my head rehearsing or replaying a conversation; always fearing or wanting. I could walk across the park and never hear a bird sing, the wind in the trees, or the joyful sound of children playing.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Through this meditation practice, I have realized how attached I was to my life experiences. Viewing life through these experiences meant that they were controlling how I showed up in the world. I was never fully present.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Throwing away my experiences has freed me in so many ways. I am not as reactive as I once was. I do not take everything personally. I am able to see a situation for what it is. I no longer judge everyone; nor do I fear everyone's judgment of me. The freedom in being fully present results in perceiving life with clarity.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text);">I see the flow of this beautiful life; I understand the ways of the world. I am so grateful!</p>
-      <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--border); display:flex; align-items:center; gap:16px;">
-        <div style="width:44px; height:44px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:600; color:var(--primary-dark);">L</div>
-        <div>
-          <div style="font-weight:600; color:var(--dark);">Lynne</div>
-          <div style="font-size:0.88rem; color:var(--text-light);">Brooklyn Meditation Member</div>
+    <!-- Testimonial Carousel (mobile swipe / desktop tab) -->
+    <div class="testimonial-carousel" id="testimonialCarousel">
+      <div id="testimonial-clarity" class="testimonial-panel active">
+        <div style="font-size:2.5rem; color:var(--primary); margin-bottom:16px; line-height:1;">"</div>
+        <p style="font-size:1rem; line-height:1.8; color:var(--text); margin-bottom:16px;">Before meditation, I was always in my head — rehearsing conversations, fearing or wanting. I could walk across the park and never hear a bird sing.</p>
+        <p style="font-size:1rem; line-height:1.8; color:var(--text);">Through this practice I've let go of old experiences that were controlling how I showed up. I no longer judge everyone or fear their judgment. I see the flow of this beautiful life with clarity.</p>
+        <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border); display:flex; align-items:center; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:600; color:var(--primary-dark); flex-shrink:0;">L</div>
+          <div><div style="font-weight:600; color:var(--dark);">Lynne</div><div style="font-size:0.85rem; color:var(--text-light);">Brooklyn Meditation Member</div></div>
+        </div>
+      </div>
+
+      <div id="testimonial-concentration" class="testimonial-panel">
+        <div style="font-size:2.5rem; color:var(--primary); margin-bottom:16px; line-height:1;">"</div>
+        <p style="font-size:1rem; line-height:1.8; color:var(--text); margin-bottom:16px;">Meditation taught me to let go of cluttered thoughts and unhelpful habits. My concentration has improved significantly.</p>
+        <p style="font-size:1rem; line-height:1.8; color:var(--text);">Instead of feeling overwhelmed, I practice gratitude and take steady steps toward my goals. I'm much more productive and better able to handle challenges.</p>
+        <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border); display:flex; align-items:center; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:600; color:var(--primary-dark); flex-shrink:0;">H</div>
+          <div><div style="font-weight:600; color:var(--dark);">Heather</div><div style="font-size:0.85rem; color:var(--text-light);">Brooklyn Meditation Member</div></div>
+        </div>
+      </div>
+
+      <div id="testimonial-past" class="testimonial-panel">
+        <div style="font-size:2.5rem; color:var(--primary); margin-bottom:16px; line-height:1;">"</div>
+        <p style="font-size:1rem; line-height:1.8; color:var(--text); margin-bottom:16px;">College was a shipwreck for me. Years later, this meditation showed me how to examine that experience objectively — I uncovered a hidden belief that I was "special" and needed recognition.</p>
+        <p style="font-size:1rem; line-height:1.8; color:var(--text);">Letting go of that has freed me. I now live with a more balanced, realistic view of myself — and that's not bad at all.</p>
+        <div style="margin-top:28px; padding-top:20px; border-top:1px solid var(--border); display:flex; align-items:center; gap:16px;">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1rem; font-weight:600; color:var(--primary-dark); flex-shrink:0;">R</div>
+          <div><div style="font-weight:600; color:var(--dark);">Ross</div><div style="font-size:0.85rem; color:var(--text-light);">Brooklyn Meditation Member</div></div>
         </div>
       </div>
     </div>
 
-    <div id="testimonial-concentration" style="display:none; max-width:780px; margin:0 auto; background:var(--white); border-radius:20px; padding:48px 52px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,0.06);">
-      <div style="font-size:2.5rem; color:var(--primary); margin-bottom:20px; line-height:1;">"</div>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Meditation has taught me how to reflect and let go of cluttered wandering thoughts, uncontrolled emotions, and unhelpful habits. As a result, my concentration has improved significantly.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Instead of wasting time feeling overwhelmed by everything I need to do, I started to practice gratitude and celebration for the smallest things in my life while taking steady, cumulative actions toward my goals.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text);">I've also noticed that I'm much more productive at work and have greater capacity to handle challenges in my personal life as my abilities to concentrate improved thanks to meditation.</p>
-      <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--border); display:flex; align-items:center; gap:16px;">
-        <div style="width:44px; height:44px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:600; color:var(--primary-dark);">H</div>
-        <div>
-          <div style="font-weight:600; color:var(--dark);">Heather</div>
-          <div style="font-size:0.88rem; color:var(--text-light);">Brooklyn Meditation Member</div>
-        </div>
-      </div>
-    </div>
-
-    <div id="testimonial-past" style="display:none; max-width:780px; margin:0 auto; background:var(--white); border-radius:20px; padding:48px 52px; border:1px solid var(--border); box-shadow:0 4px 24px rgba(0,0,0,0.06);">
-      <div style="font-size:2.5rem; color:var(--primary); margin-bottom:20px; line-height:1;">"</div>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">I did well academically in high school. My grades were good and I excelled in a few subjects. With this self-image in hand, I entered college confident that I would succeed. But college was a shipwreck. When I finally graduated, I felt defeated.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Many years later, I found this meditation method. It showed me how to reexamine that experience from a more objective point of view and uncover the assumptions I had constructed about myself. What I came to understand was that I had a hidden and carefully guarded inner belief that I am special — and that I entered college expecting that environment to recognize that specialness.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text); margin-bottom:20px;">Through meditation, I began to let go of the belief that I was so special. I could see how my own response made the shipwreck inevitable — I steered the ship onto the rocks myself.</p>
-      <p style="font-size:1.05rem; line-height:1.85; color:var(--text);">Letting go of the fantasy of specialness has made it much less of a burden. I am now closer to living in the real world, with a more balanced and realistic view of myself. And that's not bad at all.</p>
-      <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--border); display:flex; align-items:center; gap:16px;">
-        <div style="width:44px; height:44px; border-radius:50%; background:var(--primary-light); display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:600; color:var(--primary-dark);">R</div>
-        <div>
-          <div style="font-weight:600; color:var(--dark);">Ross</div>
-          <div style="font-size:0.88rem; color:var(--text-light);">Brooklyn Meditation Member</div>
-        </div>
-      </div>
+    <!-- Dots (mobile only) -->
+    <div class="testimonial-dots">
+      <span class="testimonial-dot active"></span>
+      <span class="testimonial-dot"></span>
+      <span class="testimonial-dot"></span>
     </div>
 
   </div>
@@ -353,14 +372,15 @@
 
 <script>
 function showTestimonial(id) {
+  if (window.innerWidth <= 768) return; // mobile uses swipe carousel
   var panels = ['clarity','concentration','past'];
   panels.forEach(function(p) {
-    document.getElementById('testimonial-' + p).style.display = 'none';
+    document.getElementById('testimonial-' + p).classList.remove('active');
     var btn = document.getElementById('btn-' + p);
     btn.style.background = 'transparent';
     btn.style.color = 'var(--primary-dark)';
   });
-  document.getElementById('testimonial-' + id).style.display = 'block';
+  document.getElementById('testimonial-' + id).classList.add('active');
   var activeBtn = document.getElementById('btn-' + id);
   activeBtn.style.background = 'var(--primary-dark)';
   activeBtn.style.color = '#fff';
@@ -376,7 +396,7 @@ function showTestimonial(id) {
       <p>A study of 473 new meditators showed the following results over a 3-month period:</p>
     </div>
 
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:56px;">
+    <div class="stats-rings-grid" id="statsRings" style="display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:56px;">
 
       <!-- Ring item -->
       <div class="stat-ring-item" data-pct="97">
@@ -484,8 +504,26 @@ function showTestimonial(id) {
     <span class="section-label" style="display:block; margin-bottom:16px;">Ready to Begin?</span>
     <h2>Find out what meditation can do for you</h2>
     <div class="btn-group" style="margin-top:32px;">
-      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary">Book a Private Intro — In-Person</a>
-      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-primary">Book a Private Intro — Online</a>
+      <!-- Desktop -->
+      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary book-intro-desktop">Book a Private Intro — In-Person</a>
+      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-primary book-intro-desktop">Book a Private Intro — Online</a>
+      <!-- Mobile dropdown -->
+      <div class="book-dropdown book-intro-mobile">
+        <button class="btn btn-primary book-dropdown-toggle" onclick="this.closest('.book-dropdown').classList.toggle('open')">
+          Book a Private Intro
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-left:6px; transition:transform 0.2s;"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="book-dropdown-menu">
+          <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="book-dropdown-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            In-Person
+          </a>
+          <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="book-dropdown-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Online
+          </a>
+        </div>
+      </div>
       <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-secondary">Attend a Free Open Session</a>
     </div>
     <div class="cta-features">
@@ -628,6 +666,33 @@ function showTestimonial(id) {
     mobileNav.classList.remove('open');
     document.body.style.overflow = '';
   });
+
+  // Close book-dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.book-dropdown.open').forEach(d => {
+      if (!d.contains(e.target)) d.classList.remove('open');
+    });
+  });
+
+  // Ways grid dot indicators (mobile)
+  const waysGrid = document.getElementById('waysGrid');
+  const waysDots = document.querySelectorAll('.ways-dot');
+  if (waysGrid && waysDots.length) {
+    waysGrid.addEventListener('scroll', () => {
+      const idx = Math.round(waysGrid.scrollLeft / waysGrid.clientWidth);
+      waysDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+  }
+
+  // Testimonial carousel dot indicators (mobile)
+  const testimonialCarousel = document.getElementById('testimonialCarousel');
+  const testimonialDots = document.querySelectorAll('.testimonial-dot');
+  if (testimonialCarousel && testimonialDots.length) {
+    testimonialCarousel.addEventListener('scroll', () => {
+      const idx = Math.round(testimonialCarousel.scrollLeft / testimonialCarousel.clientWidth);
+      testimonialDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+  }
 </script>
 </body>
 </html>

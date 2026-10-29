@@ -1429,6 +1429,279 @@ footer {
   gap: 12px;
 }
 
+/* ── Testimonials: desktop tab / mobile carousel ── */
+.testimonial-panel { display: none; }
+.testimonial-panel.active { display: block; max-width: 780px; margin: 0 auto; background: var(--white); border-radius: 20px; padding: 48px 52px; border: 1px solid var(--border); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+.testimonial-dots { display: none; }
+
+@media (max-width: 768px) {
+  .benefits-tabs { display: none !important; }
+
+  .testimonial-carousel {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    scrollbar-width: none;
+    margin: 0 -24px;
+    padding: 0 24px 4px;
+  }
+  .testimonial-carousel::-webkit-scrollbar { display: none; }
+
+  .testimonial-panel,
+  .testimonial-panel.active {
+    display: block !important;
+    flex: 0 0 calc(100vw - 64px);
+    min-width: calc(100vw - 64px);
+    scroll-snap-align: start;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin: 0;
+    max-width: none;
+  }
+
+  .testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .testimonial-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+  .testimonial-dot.active { background: var(--primary-dark); }
+}
+
+/* ── Stats rings mobile carousel ── */
+@media (max-width: 768px) {
+  .stats-rings-grid {
+    flex-wrap: nowrap !important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start !important;
+    scrollbar-width: none;
+    margin: 40px -24px 0;
+    padding: 0 24px 4px;
+    gap: 28px !important;
+  }
+  .stats-rings-grid::-webkit-scrollbar { display: none; }
+  .stat-ring-item {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+  }
+}
+
+/* ── CTA features mobile carousel ── */
+@media (max-width: 768px) {
+  .cta-features {
+    display: flex !important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    margin: 32px -24px 0;
+    padding: 0 24px 4px;
+    gap: 12px;
+  }
+  .cta-features::-webkit-scrollbar { display: none; }
+  .cta-feature {
+    flex: 0 0 calc(80vw - 24px);
+    min-width: calc(80vw - 24px);
+    scroll-snap-align: start;
+  }
+
+  /* Hide duplicate Book buttons in dark banner */
+  .banner-book-btns { display: none !important; }
+
+  /* Dark banner: stack image below text */
+  .dark-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .banner-img { order: -1; aspect-ratio: 16/9 !important; }
+}
+
+/* ── Ways Grid Mobile Carousel ── */
+.ways-dots { display: none; }
+
+@media (max-width: 768px) {
+  .ways-grid {
+    display: flex !important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+    margin: 0 -24px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .ways-grid::-webkit-scrollbar { display: none; }
+  .ways-grid .way-card {
+    flex: 0 0 calc(100vw - 64px);
+    min-width: calc(100vw - 64px);
+    scroll-snap-align: start;
+  }
+  .ways-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .ways-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+  .ways-dot.active { background: var(--primary-dark); }
+}
+
+/* ── Book a Private Intro Dropdown ── */
+.book-intro-mobile { display: none; }
+.book-intro-desktop { display: inline-flex; }
+
+.book-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.book-dropdown-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.book-dropdown.open .book-dropdown-toggle svg:last-child {
+  transform: rotate(180deg);
+}
+
+.book-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+  overflow: hidden;
+  z-index: 200;
+}
+
+.book-dropdown.open .book-dropdown-menu {
+  display: block;
+}
+
+.book-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.book-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.book-dropdown-item:hover {
+  background: var(--bg);
+}
+
+@media (max-width: 768px) {
+  .book-intro-desktop { display: none !important; }
+  .book-intro-mobile { display: block; }
+}
+
+/* ── Our Story Slider ── */
+.story-slider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.story-slide {
+  position: relative;
+  height: 480px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.story-dots {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .story-slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    border-radius: 16px;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .story-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .story-slide {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+    height: 380px;
+    scroll-snap-align: start;
+    border-radius: 16px;
+  }
+
+  .story-slide p {
+    font-size: 0.95rem !important;
+    bottom: 24px !important;
+    left: 20px !important;
+    right: 20px !important;
+  }
+
+  .story-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .story-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+
+  .story-dot.active {
+    background: var(--primary-dark);
+  }
+}
+
 /* ══════════════════════════════════════
    COMPREHENSIVE MOBILE OPTIMIZATION
    ══════════════════════════════════════ */
