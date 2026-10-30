@@ -167,6 +167,50 @@
       margin-bottom: 16px;
     }
 
+    /* ── Experience carousel (mobile) ── */
+    .experience-carousel {
+      display: flex;
+      flex-direction: column;
+    }
+    .experience-dots {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .experience-carousel {
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 16px;
+        margin: 0 -24px;
+        padding: 0 24px 8px;
+      }
+      .experience-carousel::-webkit-scrollbar { display: none; }
+      .experience-carousel .experience-card {
+        flex: 0 0 82vw;
+        scroll-snap-align: start;
+        margin-bottom: 0;
+      }
+      .experience-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .experience-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--border);
+        transition: background 0.3s;
+      }
+      .experience-dot.active {
+        background: var(--primary-dark);
+      }
+    }
+
     /* ── Founder ── */
     .founder-section {
       background: var(--dark);
@@ -380,10 +424,6 @@
 <section style="background: var(--bg); padding: 80px 24px;">
   <div class="container">
     <div class="about-grid about-mission-grid">
-      <!-- image first in DOM so float works on mobile -->
-      <div class="about-img about-mission-img">
-        <img src="image12.jpg" style="object-position:center 20%;" alt="Brooklyn Meditation instructor teaching" />
-      </div>
       <div class="about-text about-mission-text">
         <span class="section-label">Our Mission</span>
         <h2>Helping People Discover Lasting Inner Peace</h2>
@@ -612,38 +652,46 @@
       <h2>In their own words</h2>
       <p>The practice speaks best through those who have lived it.</p>
     </div>
-    <div class="experience-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Moving through different stages of meditation, I could feel the heavyweight on my back disappearing. Each session I left lighter than I came in. Now it's just how I live."</blockquote>
-      <div class="author">
-        <div class="avatar">M</div>
-        <div>
-          <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Melissa G.</div>
-          <div style="font-size:0.82rem; color:var(--text-light);">Member since 2016</div>
+    <div class="experience-carousel" id="experienceCarousel">
+      <div class="experience-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Moving through different stages of meditation, I could feel the heavyweight on my back disappearing. Each session I left lighter than I came in. Now it's just how I live."</blockquote>
+        <div class="author">
+          <div class="avatar">M</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Melissa G.</div>
+            <div style="font-size:0.82rem; color:var(--text-light);">Member since 2016</div>
+          </div>
+        </div>
+      </div>
+      <div class="experience-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I am taking myself, my role and my opinion less seriously. This gives me greater ease in relationships — being more vulnerable and less judgmental while feeling courageous joy and infinite strength."</blockquote>
+        <div class="author">
+          <div class="avatar">L</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Linda N.</div>
+            <div style="font-size:0.82rem; color:var(--text-light);">Member since 2015</div>
+          </div>
+        </div>
+      </div>
+      <div class="experience-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Incredible community!! Great space and method that's easy to stick with and the results are very notable, and everyone there is so helpful! Can't recommend enough."</blockquote>
+        <div class="author">
+          <div class="avatar">M</div>
+          <div>
+            <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Merckx D.</div>
+            <div style="font-size:0.82rem; color:var(--text-light);">Member since 2024</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="experience-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"I am taking myself, my role and my opinion less seriously. This gives me greater ease in relationships — being more vulnerable and less judgmental while feeling courageous joy and infinite strength."</blockquote>
-      <div class="author">
-        <div class="avatar">L</div>
-        <div>
-          <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Linda N.</div>
-          <div style="font-size:0.82rem; color:var(--text-light);">Member since 2015</div>
-        </div>
-      </div>
-    </div>
-    <div class="experience-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Incredible community!! Great space and method that's easy to stick with and the results are very notable, and everyone there is so helpful! Can't recommend enough."</blockquote>
-      <div class="author">
-        <div class="avatar">M</div>
-        <div>
-          <div style="font-weight:600; font-size:0.95rem; color:var(--dark);">Merckx D.</div>
-          <div style="font-size:0.82rem; color:var(--text-light);">Member since 2024</div>
-        </div>
-      </div>
+    <!-- experience dots -->
+    <div class="experience-dots" id="experienceDots">
+      <span class="experience-dot active"></span>
+      <span class="experience-dot"></span>
+      <span class="experience-dot"></span>
     </div>
   </div>
 </section>
@@ -745,6 +793,16 @@
       teamDots.forEach((d, i) => {
         d.style.background = i === idx ? 'var(--primary-dark)' : 'var(--border)';
       });
+    }, { passive: true });
+  }
+
+  // Experience carousel dots
+  const experienceCarousel = document.getElementById('experienceCarousel');
+  const experienceDots = document.querySelectorAll('.experience-dot');
+  if (experienceCarousel && experienceDots.length) {
+    experienceCarousel.addEventListener('scroll', () => {
+      const idx = Math.round(experienceCarousel.scrollLeft / experienceCarousel.clientWidth);
+      experienceDots.forEach((d, i) => d.classList.toggle('active', i === idx));
     }, { passive: true });
   }
 </script>
