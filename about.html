@@ -177,9 +177,97 @@
     .founder-section p { color: rgba(255,255,255,0.72); }
     .founder-section .section-label { color: var(--primary); }
 
+    /* Community photos */
+    .community-photos-mobile { display: none; }
+    .community-dots { display: none; }
+
+    .community-photos-mobile {
+      display: none;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      gap: 12px;
+    }
+    .community-photos-mobile::-webkit-scrollbar { display: none; }
+    .community-photo-slide {
+      flex: 0 0 88vw;
+      min-width: 88vw;
+      scroll-snap-align: start;
+      border-radius: 14px;
+      overflow: hidden;
+      height: 280px;
+    }
+    .community-photo-slide img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .community-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.3s;
+    }
+    .community-dot.active { background: var(--primary-dark); }
+
     @media (max-width: 768px) {
       .comparison-table { font-size: 0.85rem; }
       .comparison-table th, .comparison-table td { padding: 12px 14px; }
+
+      .community-photos-desktop { display: none; }
+      .community-photos-mobile {
+        display: flex;
+        margin: 32px -24px 0;
+        padding: 0 24px 4px;
+      }
+      .community-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      /* Team carousel */
+      .team-grid {
+        display: flex !important;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 16px;
+        margin: 0 -24px;
+        padding: 0 24px 4px;
+      }
+      .team-grid::-webkit-scrollbar { display: none; }
+      .team-card {
+        flex: 0 0 82vw;
+        min-width: 82vw;
+        scroll-snap-align: start;
+        background: var(--bg);
+        border-radius: 20px;
+        padding: 32px 24px;
+        border: 1px solid var(--border);
+      }
+      .team-dots { display: flex !important; }
+
+      /* Founder full-bleed mobile */
+      .founder-section > div {
+        min-height: 100svh;
+      }
+
+      /* Your First Visit — full-bleed image on mobile */
+      .first-visit-section { padding-bottom: 0 !important; }
+      .first-visit-grid { display: block !important; }
+      .first-visit-btns { padding-bottom: 40px !important; }
+      .first-visit-img {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        height: 300px !important;
+        border-radius: 0 !important;
+        overflow: hidden;
+      }
+      .first-visit-img img {
+        width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+      }
     }
   </style>
 </head>
@@ -291,8 +379,12 @@
 <!-- ── Our Mission ── -->
 <section style="background: var(--bg); padding: 80px 24px;">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
+    <div class="about-grid about-mission-grid">
+      <!-- image first in DOM so float works on mobile -->
+      <div class="about-img about-mission-img">
+        <img src="image12.jpg" style="object-position:center 20%;" alt="Brooklyn Meditation instructor teaching" />
+      </div>
+      <div class="about-text about-mission-text">
         <span class="section-label">Our Mission</span>
         <h2>Helping People Discover Lasting Inner Peace</h2>
         <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 24px;">
@@ -300,9 +392,6 @@
           <p style="font-size: 1.05rem; line-height: 1.85;">Inspired by a Korean meditation tradition and thoughtfully adapted for modern life, our guided practice uses reflection and visualization to help you let go of the accumulated thoughts and beliefs that shape how you see yourself and the world.</p>
           <p style="font-size: 1.05rem; line-height: 1.85;">The result is more than temporary relaxation. It is a journey toward greater clarity, freedom, and lasting inner peace.</p>
         </div>
-      </div>
-      <div class="about-img">
-        <img src="image12.jpg" style="object-position:center 20%;" alt="Brooklyn Meditation instructor teaching" />
       </div>
     </div>
   </div>
@@ -377,20 +466,24 @@
 </section>
 
 <!-- ── Founder & History ── -->
-<section class="founder-section" id="founder" style="padding: 80px 24px;">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-img" style="aspect-ratio:1;">
-        <img src="https://static.wixstatic.com/media/99ec98fdb81945c29c25a3ad6c5606b1.jpg/v1/fill/w_700,h_700,al_c,q_80,enc_avif,quality_auto/99ec98fdb81945c29c25a3ad6c5606b1.jpg"
-             alt="Founder of the meditation method" />
-      </div>
-      <div class="about-text">
-        <span class="section-label" style="color:var(--primary);">Our Founder</span>
-        <h2>Woo Myung</h2>
-        <p>From an early age, Woo Myung earnestly sought answers to life's most fundamental questions: Why do people live? Where do we come from and where do we go? Why is there so much conflict in the world?</p>
-        <p>Through deep searching and self-reflection, he reached enlightenment and developed the meditation method now taught at centers around the world — including Brooklyn Meditation.</p>
-        <p>His teachings guide the core of our practice: helping people let go of their false mind and discover their true self.</p>
-        <a href="https://woomyung.com" target="_blank" class="btn btn-outline-white" style="margin-top:24px;">Learn More About the Founder</a>
+<section class="founder-section" id="founder" style="padding: 0; position: relative; overflow: hidden;">
+  <!-- Full-bleed mountain photo -->
+  <div style="position: relative; min-height: 85vh; display: flex; align-items: flex-end;">
+    <img src="https://static.wixstatic.com/media/99ec98fdb81945c29c25a3ad6c5606b1.jpg/v1/fill/w_1600,h_1067,al_c,q_85,enc_avif,quality_auto/99ec98fdb81945c29c25a3ad6c5606b1.jpg"
+         alt="Mountain landscape — Woo Myung"
+         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 30%;" />
+    <!-- Gradient: transparent top → dark bottom -->
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(15,18,22,0.15) 0%, rgba(15,18,22,0.3) 40%, rgba(31,35,40,0.92) 70%, var(--dark) 100%);"></div>
+
+    <!-- Text overlaid at bottom -->
+    <div class="container" style="position:relative; z-index:2; padding: 0 24px 72px; width:100%;">
+      <div style="max-width: 680px;">
+        <span class="section-label" style="color:var(--primary); display:block; margin-bottom:12px;">Our Founder</span>
+        <h2 style="color:var(--white); font-size:clamp(2.2rem,5vw,3.5rem); margin-bottom:28px;">Woo Myung</h2>
+        <p style="color:rgba(255,255,255,0.82); font-size:1.05rem; line-height:1.85; margin-bottom:16px;">From an early age, Woo Myung earnestly sought answers to life's most fundamental questions: Why do people live? Where do we come from and where do we go? Why is there so much conflict in the world?</p>
+        <p style="color:rgba(255,255,255,0.82); font-size:1.05rem; line-height:1.85; margin-bottom:16px;">Through deep searching and self-reflection, he reached enlightenment and developed the meditation method now taught at centers around the world — including Brooklyn Meditation.</p>
+        <p style="color:rgba(255,255,255,0.82); font-size:1.05rem; line-height:1.85; margin-bottom:32px;">His teachings guide the core of our practice: helping people let go of their false mind and discover their true self.</p>
+        <a href="https://woomyung.com" target="_blank" class="btn btn-outline-white">Learn More About the Founder</a>
       </div>
     </div>
   </div>
@@ -404,16 +497,15 @@
       <h2>Meet CJ &amp; Elizabeth</h2>
       <p>Our guides are long-term practitioners who have been through the same process — and are here to walk alongside you.</p>
     </div>
-    <div class="team-grid">
+    <div class="team-grid" id="teamGrid">
       <div class="team-card">
         <div class="photo">
           <img src="Profile_CJ_Lee.png" alt="CJ Lee - Guide" />
         </div>
         <h3>CJ Lee</h3>
         <div class="title">Guide</div>
-        <p>CJ Lee holds a Bachelor of Architecture and worked as an architect for a decade before dedicating her life to meditation and spiritual practice. After experiencing profound personal transformation through meditation—including significantly reducing stress and anxiety—she chose to help others discover greater inner peace.</p>
-        <p style="margin-top:12px;">With 20+ years of meditation practice and 15+ years as a full-time meditation guide, CJ has guided approximately 4,000 people and completed more than 500 hours of meditation training in the U.S., South Korea, Mexico, and Sweden.</p>
-        <p style="margin-top:12px;">CJ Lee is a meditation guide and co-director of Brooklyn Meditation who has led and collaborated on meditation workshops and initiatives with NYU, The New School, SolarOne, Berkeley Carroll School, Brooklyn College Academy, National Grid, and former NYC Mayor Eric Adams. During the pandemic, she received support from the Sara Blakely Foundation and has trained meditation guides serving communities across North America.</p>
+        <p>CJ Lee holds a Bachelor of Architecture and worked as an architect for a decade before dedicating her life to meditation and spiritual practice. After experiencing profound personal transformation, she chose to help others discover greater inner peace.</p>
+        <p style="margin-top:12px;">With 20+ years of meditation practice and 15+ years as a full-time guide, CJ has guided ~4,000 people and completed 500+ hours of training across the U.S., South Korea, Mexico, and Sweden. She has collaborated with NYU, The New School, National Grid, and former NYC Mayor Eric Adams.</p>
       </div>
       <div class="team-card">
         <div class="photo">
@@ -421,8 +513,14 @@
         </div>
         <h3>Elizabeth Cockrell</h3>
         <div class="title">Guide</div>
-        <p>My meditation journey began in 2013, for a personal need to heal and settle down my mind. Finding peace through this practice completely transformed me, and I believe if it worked for me, it can work for anyone. I became a guide with Brooklyn Meditation when we first opened in 2015. I'm here to offer a listening ear and facilitate the self-reflection that helps you let go of what's weighing on you, and find your true nature — yourself who is at peace.</p>
+        <p>My meditation journey began in 2013 — a personal need to heal and settle my mind. Finding peace through this practice completely transformed me, and I believe if it worked for me, it can work for anyone.</p>
+        <p style="margin-top:12px;">I became a guide with Brooklyn Meditation when we first opened in 2015. I'm here to offer a listening ear and facilitate the self-reflection that helps you let go of what's weighing on you, and find your true nature.</p>
       </div>
+    </div>
+    <!-- Dots (mobile only) -->
+    <div class="team-dots" style="display:none; justify-content:center; gap:8px; margin-top:20px;">
+      <span class="team-dot" style="width:8px;height:8px;border-radius:50%;background:var(--primary-dark);opacity:1;"></span>
+      <span class="team-dot" style="width:8px;height:8px;border-radius:50%;background:var(--border);"></span>
     </div>
   </div>
 </section>
@@ -435,32 +533,41 @@
       <h2>You Don't Have to Do This Alone</h2>
       <p style="font-size:1.1rem;">Meditation is a personal journey, but it doesn't have to be a lonely one. At Brooklyn Meditation, you'll find a warm and supportive community where people encourage one another, celebrate each other's growth, and discover that lasting change is possible together.</p>
     </div>
-    <!-- Community featured photo -->
-    <div style="margin-top: 48px; border-radius: var(--border-radius); overflow: hidden; box-shadow: 0 8px 32px rgba(44,36,22,0.10);">
-      <img src="image9.jpg" style="width:100%; max-height:480px; object-fit:cover; object-position:center 30%; display:block;" alt="Brooklyn Meditation community gathering" />
+    <!-- Community photos: desktop = featured + grid / mobile = swipe carousel -->
+    <div class="community-photos-desktop" style="margin-top:48px;">
+      <div style="border-radius:var(--border-radius); overflow:hidden; box-shadow:0 8px 32px rgba(44,36,22,0.10);">
+        <img src="image9.jpg" style="width:100%; max-height:480px; object-fit:cover; object-position:center 30%; display:block;" alt="Brooklyn Meditation community gathering" />
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-top:12px;">
+        <div style="overflow:hidden; border-radius:8px; height:220px;"><img src="image5.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" alt="Community celebration" /></div>
+        <div style="overflow:hidden; border-radius:8px; height:220px;"><img src="image10.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center top;" alt="Brooklyn Meditation members jumping" /></div>
+        <div style="overflow:hidden; border-radius:8px; height:220px;"><img src="image2.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" alt="Community 5K run event" /></div>
+        <div style="overflow:hidden; border-radius:8px; height:220px;"><img src="image11.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" alt="Outdoor park meditation" /></div>
+      </div>
     </div>
-    <!-- Community photo grid -->
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-top:12px;">
-      <div style="overflow:hidden; border-radius:8px; height:220px;">
-        <img src="image5.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" alt="Community celebration" />
-      </div>
-      <div style="overflow:hidden; border-radius:8px; height:220px;">
-        <img src="image10.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center top;" alt="Brooklyn Meditation members jumping" />
-      </div>
-      <div style="overflow:hidden; border-radius:8px; height:220px;">
-        <img src="image2.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" alt="Community 5K run event" />
-      </div>
-      <div style="overflow:hidden; border-radius:8px; height:220px;">
-        <img src="image11.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;" alt="Outdoor park meditation" />
-      </div>
+
+    <!-- Mobile: swipeable photo carousel -->
+    <div class="community-photos-mobile" id="communityCarousel" style="margin-top:32px;">
+      <div class="community-photo-slide"><img src="image9.jpg" alt="Community gathering" /></div>
+      <div class="community-photo-slide"><img src="image5.jpg" alt="Community celebration" /></div>
+      <div class="community-photo-slide"><img src="image10.jpg" alt="Members jumping" /></div>
+      <div class="community-photo-slide"><img src="image2.jpg" alt="5K run event" /></div>
+      <div class="community-photo-slide"><img src="image11.jpg" alt="Park meditation" /></div>
+    </div>
+    <div class="community-dots">
+      <span class="community-dot active"></span>
+      <span class="community-dot"></span>
+      <span class="community-dot"></span>
+      <span class="community-dot"></span>
+      <span class="community-dot"></span>
     </div>
   </div>
 </section>
 
 <!-- ── Your First Visit ── -->
-<section style="background: var(--white); padding: 80px 24px;">
+<section class="first-visit-section" style="background: var(--white); padding: 80px 24px 0;">
   <div class="container">
-    <div class="about-grid">
+    <div class="about-grid first-visit-grid">
       <div class="about-text">
         <span class="section-label">Your First Visit</span>
         <h2>What to Expect</h2>
@@ -471,12 +578,12 @@
           <li>Time for questions afterward.</li>
           <li>No pressure or commitment.</li>
         </ul>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:36px;">
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:36px; padding-bottom: 80px;" class="first-visit-btns">
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary">In-Person</a>
           <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313514" target="_blank" class="btn btn-secondary">Online</a>
         </div>
       </div>
-      <div class="about-img">
+      <div class="about-img first-visit-img">
         <img src="image1.jpg" style="width:100%; height:100%; object-fit:cover; object-position:center;" alt="Group meditation class at Brooklyn Meditation" />
       </div>
     </div>
@@ -616,6 +723,28 @@
     slider.addEventListener('scroll', () => {
       const idx = Math.round(slider.scrollLeft / slider.clientWidth);
       dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+  }
+
+  // Community photo carousel dots
+  const communityCarousel = document.getElementById('communityCarousel');
+  const communityDots = document.querySelectorAll('.community-dot');
+  if (communityCarousel && communityDots.length) {
+    communityCarousel.addEventListener('scroll', () => {
+      const idx = Math.round(communityCarousel.scrollLeft / communityCarousel.clientWidth);
+      communityDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+  }
+
+  // Team carousel dots
+  const teamGrid = document.getElementById('teamGrid');
+  const teamDots = document.querySelectorAll('.team-dot');
+  if (teamGrid && teamDots.length) {
+    teamGrid.addEventListener('scroll', () => {
+      const idx = Math.round(teamGrid.scrollLeft / teamGrid.clientWidth);
+      teamDots.forEach((d, i) => {
+        d.style.background = i === idx ? 'var(--primary-dark)' : 'var(--border)';
+      });
     }, { passive: true });
   }
 </script>
