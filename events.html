@@ -109,37 +109,29 @@
       font-size: 0.9rem;
     }
 
-    /* ── Mobile carousel: open sessions ── */
+    /* ── Mobile: open sessions side by side ── */
     @media (max-width: 768px) {
       .open-session-grid {
-        display: flex;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        gap: 16px;
-        margin: 48px -24px 0;
-        padding: 0 24px 8px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 32px;
       }
-      .open-session-grid::-webkit-scrollbar { display: none; }
-      .open-session-grid .open-session-card {
-        flex: 0 0 80vw;
-        scroll-snap-align: start;
+      .open-session-card {
+        padding: 28px 16px;
       }
-      .open-session-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        margin-top: 20px;
+      .open-session-card .day {
+        font-size: 1.8rem;
       }
-      .open-session-dot {
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--border);
-        transition: background 0.3s;
+      .open-session-card .time {
+        font-size: 0.95rem;
       }
-      .open-session-dot.active { background: var(--primary-dark); }
+      .open-session-card p {
+        font-size: 0.8rem;
+      }
+      .open-session-card .btn {
+        font-size: 0.82rem;
+        padding: 10px 16px;
+      }
     }
     .open-session-dots { display: none; }
 
@@ -307,11 +299,6 @@
         <p>Start your Sunday with stillness. A 60-minute guided session open to all.</p>
         <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-primary" style="margin-top:20px;">Register</a>
       </div>
-    </div>
-    <!-- open session dots -->
-    <div class="open-session-dots" id="openSessionDots">
-      <span class="open-session-dot active"></span>
-      <span class="open-session-dot"></span>
     </div>
     <div style="background:var(--white); border-radius:var(--border-radius); padding:36px 40px; margin-top:40px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
       <div>
