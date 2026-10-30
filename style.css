@@ -750,12 +750,6 @@ section {
   align-self: flex-start;
 }
 
-@media (max-width: 768px) {
-  .ways-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
 
 /* ── Steps / How it Works ── */
 .steps-section {
@@ -1564,71 +1558,6 @@ footer {
   .ways-dot.active { background: var(--primary-dark); }
 }
 
-/* ── Book a Private Intro Dropdown ── */
-.book-intro-mobile { display: none; }
-.book-intro-desktop { display: inline-flex; }
-
-.book-dropdown {
-  position: relative;
-  width: 100%;
-}
-
-.book-dropdown-toggle {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-}
-
-.book-dropdown.open .book-dropdown-toggle svg:last-child {
-  transform: rotate(180deg);
-}
-
-.book-dropdown-menu {
-  display: none;
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
-  background: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 8px 28px rgba(0,0,0,0.18);
-  overflow: hidden;
-  z-index: 200;
-}
-
-.book-dropdown.open .book-dropdown-menu {
-  display: block;
-}
-
-.book-dropdown-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 20px;
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-bottom: 1px solid var(--border);
-  transition: background 0.15s;
-}
-
-.book-dropdown-item:last-child {
-  border-bottom: none;
-}
-
-.book-dropdown-item:hover {
-  background: var(--bg);
-}
-
-@media (max-width: 768px) {
-  .book-intro-desktop { display: none !important; }
-  .book-intro-mobile { display: block; }
-}
 
 /* ── Our Story Slider ── */
 .story-slider {
@@ -1869,12 +1798,6 @@ footer {
 
   .logo-item img {
     height: 30px;
-  }
-
-  /* ── Ways Grid ── */
-  .ways-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
   }
 
   /* ── Schedule grid ── */
