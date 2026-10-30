@@ -1800,6 +1800,9 @@ footer {
     height: 30px;
   }
 
+  /* ── Footer: hide nav columns on mobile ── */
+  .footer-col { display: none; }
+
   /* ── Schedule grid ── */
   .schedule-grid {
     grid-template-columns: repeat(2, 1fr) !important;
