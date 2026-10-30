@@ -1922,6 +1922,22 @@ footer {
   }
 }
 
+/* ── Swipe hint text (mobile only) ── */
+.swipe-hint {
+  display: none;
+}
+@media (max-width: 768px) {
+  .swipe-hint {
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    margin-top: 20px;
+    opacity: 0.7;
+  }
+}
+
 /* ── Stats rings: mobile peek carousel ── */
 @media (max-width: 768px) {
   #statsRings {
