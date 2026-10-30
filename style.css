@@ -1929,7 +1929,7 @@ footer {
 @media (max-width: 768px) {
   .swipe-hint {
     display: block;
-    text-align: center;
+    text-align: right;
     font-size: 0.8rem;
     color: var(--text-light);
     letter-spacing: 0.05em;
