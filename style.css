@@ -1446,8 +1446,8 @@ footer {
   .testimonial-panel,
   .testimonial-panel.active {
     display: block !important;
-    flex: 0 0 calc(100vw - 64px);
-    min-width: calc(100vw - 64px);
+    flex: 0 0 82vw;
+    min-width: 82vw;
     scroll-snap-align: start;
     border-radius: 16px;
     padding: 28px 24px;
@@ -1498,15 +1498,21 @@ footer {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    /* peek: bleed past container edges so next card is visible */
     margin: 32px -24px 0;
-    padding: 0 24px 4px;
+    padding: 0 24px 16px;
     gap: 12px;
   }
   .cta-features::-webkit-scrollbar { display: none; }
   .cta-feature {
-    flex: 0 0 calc(80vw - 24px);
-    min-width: calc(80vw - 24px);
+    /* ~78% width = next card peeks ~10% on the right */
+    flex: 0 0 78vw;
+    min-width: 78vw;
     scroll-snap-align: start;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 24px 20px;
+    background: var(--white);
   }
 
   /* Hide duplicate Book buttons in dark banner */
@@ -1538,8 +1544,8 @@ footer {
   }
   .ways-grid::-webkit-scrollbar { display: none; }
   .ways-grid .way-card {
-    flex: 0 0 calc(100vw - 64px);
-    min-width: calc(100vw - 64px);
+    flex: 0 0 78vw;
+    min-width: 78vw;
     scroll-snap-align: start;
   }
   .ways-dots {
