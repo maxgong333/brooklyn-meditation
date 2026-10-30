@@ -109,6 +109,74 @@
       font-size: 0.9rem;
     }
 
+    /* ── Mobile carousel: open sessions ── */
+    @media (max-width: 768px) {
+      .open-session-grid {
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 16px;
+        margin: 48px -24px 0;
+        padding: 0 24px 8px;
+      }
+      .open-session-grid::-webkit-scrollbar { display: none; }
+      .open-session-grid .open-session-card {
+        flex: 0 0 80vw;
+        scroll-snap-align: start;
+      }
+      .open-session-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .open-session-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--border);
+        transition: background 0.3s;
+      }
+      .open-session-dot.active { background: var(--primary-dark); }
+    }
+    .open-session-dots { display: none; }
+
+    /* ── Mobile carousel: online cards ── */
+    @media (max-width: 768px) {
+      .online-cards-grid {
+        display: flex !important;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 16px;
+        margin: 48px -24px 0;
+        padding: 0 24px 8px;
+      }
+      .online-cards-grid::-webkit-scrollbar { display: none; }
+      .online-cards-grid .card {
+        flex: 0 0 80vw !important;
+        scroll-snap-align: start;
+      }
+      .online-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .online-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--border);
+        transition: background 0.3s;
+      }
+      .online-dot.active { background: var(--primary-dark); }
+    }
+    .online-dots { display: none; }
+
     .corporate-section {
       background: var(--dark);
       color: var(--white);
@@ -123,6 +191,17 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 24px;
       margin-top: 40px;
+    }
+    @media (max-width: 768px) {
+      .corporate-features {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .corporate-feature {
+        padding: 20px 16px;
+      }
+      .corporate-feature h4 { font-size: 0.9rem; }
+      .corporate-feature p { font-size: 0.82rem; }
     }
     .corporate-feature {
       padding: 28px 24px;
@@ -215,7 +294,7 @@
       <h2>Free Open Meditation Sessions</h2>
       <p>No experience needed. Just come and sit — it's that simple.</p>
     </div>
-    <div class="open-session-grid">
+    <div class="open-session-grid" id="openSessionGrid">
       <div class="open-session-card">
         <div class="day">Friday</div>
         <div class="time">3:00 PM</div>
@@ -228,6 +307,11 @@
         <p>Start your Sunday with stillness. A 60-minute guided session open to all.</p>
         <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-primary" style="margin-top:20px;">Register</a>
       </div>
+    </div>
+    <!-- open session dots -->
+    <div class="open-session-dots" id="openSessionDots">
+      <span class="open-session-dot active"></span>
+      <span class="open-session-dot"></span>
     </div>
     <div style="background:var(--white); border-radius:var(--border-radius); padding:36px 40px; margin-top:40px; border:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
       <div>
@@ -267,6 +351,12 @@
         <p style="font-size:0.9rem; flex:1;">Book a free 30-minute consultation with a guide to get your questions answered.</p>
         <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75478&k_service=304065" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Book Consultation</a>
       </div>
+    </div>
+    <!-- online dots -->
+    <div class="online-dots" id="onlineDots">
+      <span class="online-dot active"></span>
+      <span class="online-dot"></span>
+      <span class="online-dot"></span>
     </div>
   </div>
 </section>
@@ -503,6 +593,26 @@
     document.getElementById('mobileNav').classList.remove('open');
     document.body.style.overflow = '';
   });
+
+  // Open session carousel dots
+  const openGrid = document.getElementById('openSessionGrid');
+  const openDots = document.querySelectorAll('.open-session-dot');
+  if (openGrid && openDots.length) {
+    openGrid.addEventListener('scroll', () => {
+      const idx = Math.round(openGrid.scrollLeft / openGrid.clientWidth);
+      openDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+  }
+
+  // Online cards carousel dots
+  const onlineGrid = document.querySelector('.online-cards-grid');
+  const onlineDots = document.querySelectorAll('.online-dot');
+  if (onlineGrid && onlineDots.length) {
+    onlineGrid.addEventListener('scroll', () => {
+      const idx = Math.round(onlineGrid.scrollLeft / onlineGrid.clientWidth);
+      onlineDots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, { passive: true });
+  }
 </script>
 </body>
 </html>
