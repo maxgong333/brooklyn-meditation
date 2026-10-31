@@ -242,25 +242,8 @@
       <span style="font-size:0.95rem; font-weight:600; color:var(--dark);">60 Live Online Classes to Choose From</span>
     </div>
 
-    <div class="pricing-grid">
-      <!-- 1 Month Trial -->
-      <div class="pricing-card">
-        <h3>1 Month Trial</h3>
-        <p style="font-size:0.9rem; color:var(--text-light);">Try the full membership experience for one month — no recurring charges.</p>
-        <div class="price">$200</div>
-        <div class="price-sub">one-time · non-recurring</div>
-        <ul class="pricing-features">
-          <li>Unlimited classes</li>
-          <li>In-person and online access</li>
-          <li>Private sessions</li>
-          <li>Personal progress check-ins</li>
-          <li>Community events</li>
-        </ul>
-        <p style="font-size:0.82rem; color:var(--text-light); margin:12px 0 16px; line-height:1.5;">36 Weekly In-Person Classes + 60 Live Online Classes to Choose From</p>
-        <a href="https://www.wellnessliving.com/rs/catalog-view.html?k_business=760342&id_sale=2&k_id=4332591" target="_blank" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Started</a>
-      </div>
-
-      <!-- Monthly -->
+    <div class="pricing-grid" id="pricingCarousel">
+      <!-- Monthly $175 — cheapest first -->
       <div class="pricing-card">
         <h3>Monthly Membership</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Unlimited access with a flexible monthly commitment.</p>
@@ -277,7 +260,24 @@
         <a href="https://www.wellnessliving.com/rs/catalog-view.html?k_business=760342&id_sale=1&k_id=3965494" target="_blank" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Started</a>
       </div>
 
-      <!-- 3 Month -->
+      <!-- 1 Month Trial $200 -->
+      <div class="pricing-card">
+        <h3>1 Month Trial</h3>
+        <p style="font-size:0.9rem; color:var(--text-light);">Try the full membership experience for one month — no recurring charges.</p>
+        <div class="price">$200</div>
+        <div class="price-sub">one-time · non-recurring</div>
+        <ul class="pricing-features">
+          <li>Unlimited classes</li>
+          <li>In-person and online access</li>
+          <li>Private sessions</li>
+          <li>Personal progress check-ins</li>
+          <li>Community events</li>
+        </ul>
+        <p style="font-size:0.82rem; color:var(--text-light); margin:12px 0 16px; line-height:1.5;">36 Weekly In-Person Classes + 60 Live Online Classes to Choose From</p>
+        <a href="https://www.wellnessliving.com/rs/catalog-view.html?k_business=760342&id_sale=2&k_id=4332591" target="_blank" class="btn btn-secondary" style="width:100%; justify-content:center;">Get Started</a>
+      </div>
+
+      <!-- 3 Month $400 -->
       <div class="pricing-card featured">
         <div class="featured-badge">Most Popular</div>
         <h3>3 Month Membership</h3>
@@ -294,7 +294,7 @@
         <a href="https://www.wellnessliving.com/rs/catalog-view.html?k_business=760342&id_sale=1&k_id=3967297" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center; background:var(--primary-dark);">Get Started</a>
       </div>
 
-      <!-- Annual -->
+      <!-- Annual $1,600 -->
       <div class="pricing-card">
         <h3>Annual Membership</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Best value for committed practitioners.</p>
@@ -444,6 +444,30 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
+
+  // Pricing carousel bounce effect (mobile only)
+  const carousel = document.getElementById('pricingCarousel');
+  if (carousel && window.innerWidth <= 768) {
+    let bouncing = false;
+    carousel.addEventListener('scroll', () => {
+      if (bouncing) return;
+      const atStart = carousel.scrollLeft <= 0;
+      const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 2;
+      if (atStart || atEnd) {
+        bouncing = true;
+        const dir = atStart ? 1 : -1;
+        carousel.style.transition = 'transform 0.15s ease-out';
+        carousel.style.transform = `translateX(${dir * 12}px)`;
+        setTimeout(() => {
+          carousel.style.transform = 'translateX(0)';
+          setTimeout(() => {
+            carousel.style.transition = '';
+            bouncing = false;
+          }, 150);
+        }, 150);
+      }
+    }, { passive: true });
+  }
 </script>
 </body>
 </html>

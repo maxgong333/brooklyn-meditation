@@ -1795,13 +1795,22 @@ footer {
     min-width: 80px;
   }
 
-  /* ── Pricing ── */
+  /* ── Pricing mobile carousel ── */
   .pricing-grid {
-    grid-template-columns: 1fr !important;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    margin: 0 -24px;
+    padding: 0 24px 16px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .pricing-card {
+    flex: 0 0 82vw;
+    min-width: 82vw;
+    scroll-snap-align: start;
     padding: 28px 24px;
   }
 
