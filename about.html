@@ -254,8 +254,12 @@
     .community-dot.active { background: var(--primary-dark); }
 
     @media (max-width: 768px) {
-      .comparison-table { font-size: 0.85rem; }
-      .comparison-table th, .comparison-table td { padding: 12px 14px; }
+      .comparison-table { font-size: 0.75rem; table-layout: fixed; width: 100%; }
+      .comparison-table th, .comparison-table td { padding: 8px 8px; }
+      .comparison-table th:first-child,
+      .comparison-table td:first-child { width: 26%; word-break: keep-all; }
+      .comparison-table th:not(:first-child),
+      .comparison-table td:not(:first-child) { width: 37%; }
 
       .community-photos-desktop { display: none; }
       .community-photos-mobile {
@@ -352,8 +356,8 @@
       </li>
     </ul>
     <div class="navbar-actions">
-      <a href="schedule.html" class="btn btn-secondary">Class Schedule</a>
-      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary"><span class="btn-text-desktop">Book a Private Intro</span><span class="btn-text-mobile">Book Now</span></a>
+      <a href="schedule.html" class="btn btn-secondary"><span class="btn-text-desktop">Class Schedule</span><span class="btn-text-mobile">Schedule</span></a>
+      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary"><span class="btn-text-desktop">Book a Private Intro</span><span class="btn-text-mobile">Book</span></a>
     </div>
     <button class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></button>
   </div>
