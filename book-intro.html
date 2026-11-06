@@ -17,6 +17,73 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @media (max-width: 768px) {
+      /* 1. Nav buttons — one line */
+      .navbar-actions .btn {
+        white-space: nowrap;
+        font-size: 0.72rem !important;
+        padding: 7px 10px !important;
+        letter-spacing: 0 !important;
+      }
+
+      /* 2. Booking cards — horizontal swipe carousel */
+      .booking-section { padding: 48px 0 !important; }
+      .booking-cards-grid {
+        display: flex !important;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        gap: 16px !important;
+        padding: 0 24px 24px !important;
+        max-width: none !important;
+        scrollbar-width: none;
+        margin: 0 !important;
+      }
+      .booking-cards-grid::-webkit-scrollbar { display: none; }
+      .booking-cards-grid > div {
+        scroll-snap-align: center;
+        flex: 0 0 82% !important;
+        min-width: 0;
+        padding: 36px 24px !important;
+      }
+
+      /* 3. What to Expect — horizontal swipe carousel */
+      .expect-section { padding: 48px 0 !important; }
+      .expect-section .container { overflow: visible !important; }
+      .expect-grid {
+        display: flex !important;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        gap: 0 !important;
+        padding: 0 24px 24px !important;
+        max-width: none !important;
+        scrollbar-width: none;
+        margin: 24px 0 0 !important;
+      }
+      .expect-grid::-webkit-scrollbar { display: none; }
+      .expect-grid > div {
+        scroll-snap-align: center;
+        flex: 0 0 80% !important;
+        min-width: 0;
+        padding: 32px 20px !important;
+      }
+
+      /* Swipe hint dots */
+      .swipe-dots {
+        display: flex !important;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 12px;
+      }
+    }
+    @media (min-width: 769px) {
+      .swipe-dots { display: none; }
+    }
+  </style>
 </head>
 <body>
 
@@ -118,9 +185,9 @@
 </section>
 
 <!-- ── Booking Options ── -->
-<section style="padding: 80px 24px; background: var(--white);">
+<section class="booking-section" style="padding: 80px 24px; background: var(--white);">
   <div class="container">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 960px; margin: 0 auto;">
+    <div class="booking-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 960px; margin: 0 auto;">
 
       <!-- 60-min Trial -->
       <div style="border: 2px solid var(--primary); border-radius: var(--border-radius); padding: 48px 36px; position: relative; background: var(--bg);">
@@ -149,9 +216,9 @@
         <p style="line-height:1.8; color:var(--text-light); margin-bottom:16px;">Experience our meditation method and connect with a welcoming community. All are welcome — beginners and experienced meditators alike.</p>
         <div style="background: var(--primary-light); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px;">
           <div style="font-weight:600; margin-bottom:6px; font-size:0.95rem;">Upcoming Sessions</div>
-          <div style="font-size:0.9rem; color:var(--text-light); line-height:1.7;">
-            🕒 Every <strong>Friday at 3:00 PM</strong><br>
-            🕒 Every <strong style="white-space:nowrap">Sunday at 11:30 AM</strong>
+          <div style="display:grid; grid-template-columns:auto 1fr; column-gap:4px; font-size:0.9rem; color:var(--text-light); line-height:1.7;">
+            <span style="white-space:nowrap">🕒 Every</span><strong style="white-space:nowrap">Friday at 3:00 PM</strong>
+            <span style="white-space:nowrap">🕒 Every</span><strong style="white-space:nowrap">Sunday at 11 AM</strong>
           </div>
         </div>
         <a href="https://www.wellnessliving.com/rs/schedule/brooklyn_meditation?k_business=760342&uid=0&id_class_tab=1" target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; display:block;">RSVP for Open Session</a>
@@ -162,13 +229,13 @@
 </section>
 
 <!-- ── What to Expect ── -->
-<section style="padding: 80px 24px; background: var(--primary-light);">
+<section class="expect-section" style="padding: 80px 24px; background: var(--primary-light);">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Your First Visit</span>
       <h2>What to Expect</h2>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; margin-top:48px; max-width:900px; margin-left:auto; margin-right:auto;">
+    <div class="expect-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:24px; margin-top:48px; max-width:900px; margin-left:auto; margin-right:auto;">
       <div style="text-align:center; padding: 32px 24px;">
         <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; color:var(--primary-dark); font-weight:600; line-height:1; margin-bottom:16px;">1</div>
         <h4 style="margin-bottom:12px;">Meet Your Guide</h4>
@@ -184,6 +251,11 @@
         <h4 style="margin-bottom:12px;">Ask Your Questions</h4>
         <p style="color:var(--text-light); font-size:0.95rem; line-height:1.7;">Have all your questions answered before deciding on a membership. No pressure — just clarity about the practice.</p>
       </div>
+    </div>
+    <div class="swipe-dots" style="display:none;">
+      <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-dark);opacity:1;"></span>
+      <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-dark);opacity:0.3;"></span>
+      <span style="width:8px;height:8px;border-radius:50%;background:var(--primary-dark);opacity:0.3;"></span>
     </div>
   </div>
 </section>
@@ -216,10 +288,11 @@
       <div class="footer-brand">
         <a href="index.html"><img src="logo.png" alt="Brooklyn Meditation" style="height:40px;" /></a>
         <p>A quiet place to come back to yourself.<br>Park Slope, Brooklyn · Est. 2015</p>
-        <div class="social-links">
-          <a href="#" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-          </a>
+        <div class="social-links" style="display:flex; gap:14px; margin-top:16px;">
+          <a href="https://www.instagram.com/brooklynmeditation/" target="_blank" aria-label="Instagram" style="font-size:1.4rem; text-decoration:none;" title="Instagram">📸</a>
+          <a href="https://www.youtube.com/@brooklynmeditation" target="_blank" aria-label="YouTube" style="font-size:1.4rem; text-decoration:none;" title="YouTube">▶️</a>
+          <a href="https://www.facebook.com/brooklynmeditation" target="_blank" aria-label="Facebook" style="font-size:1.4rem; text-decoration:none;" title="Facebook">👥</a>
+          <a href="https://www.tiktok.com/@brooklynmeditation" target="_blank" aria-label="TikTok" style="font-size:1.4rem; text-decoration:none;" title="TikTok">🎵</a>
         </div>
       </div>
       <div class="footer-col">
@@ -267,6 +340,54 @@
   document.getElementById('mobileNavClose').addEventListener('click', () => {
     document.getElementById('mobileNav').classList.remove('open');
   });
+
+  // Mobile carousel bounce + dot indicators
+  if (window.innerWidth <= 768) {
+    function setupCarousel(containerSel, dotsSel) {
+      const container = document.querySelector(containerSel);
+      const dotsEl = document.querySelector(dotsSel);
+      if (!container) return;
+
+      const cards = Array.from(container.children);
+      let dots = [];
+      if (dotsEl) {
+        dotsEl.innerHTML = '';
+        cards.forEach((_, i) => {
+          const d = document.createElement('span');
+          d.style.cssText = 'width:8px;height:8px;border-radius:50%;background:var(--primary-dark);opacity:' + (i === 0 ? '1' : '0.3') + ';transition:opacity 0.3s;display:inline-block;';
+          dotsEl.appendChild(d);
+          dots.push(d);
+        });
+      }
+
+      let bounceAnim = null;
+      function springTo(target) {
+        cancelAnimationFrame(bounceAnim);
+        function step() {
+          const diff = target - container.scrollLeft;
+          if (Math.abs(diff) < 0.5) { container.scrollLeft = target; return; }
+          container.scrollLeft += diff * 0.25;
+          bounceAnim = requestAnimationFrame(step);
+        }
+        step();
+      }
+
+      container.addEventListener('scrollend', () => {
+        const max = container.scrollWidth - container.clientWidth;
+        if (container.scrollLeft < 0) springTo(0);
+        else if (container.scrollLeft > max) springTo(max);
+      });
+
+      container.addEventListener('scroll', () => {
+        if (!dots.length) return;
+        const idx = Math.round(container.scrollLeft / (container.scrollWidth / cards.length));
+        dots.forEach((d, i) => d.style.opacity = i === idx ? '1' : '0.3');
+      });
+    }
+
+    setupCarousel('.booking-cards-grid', null);
+    setupCarousel('.expect-grid', '.swipe-dots');
+  }
 </script>
 
 
