@@ -193,7 +193,7 @@
       <div style="border: 2px solid var(--primary); border-radius: var(--border-radius); padding: 48px 36px; position: relative; background: var(--bg);">
         <div style="position:absolute; top:-14px; left:32px; background:var(--primary); color:var(--dark); font-family:'Jost',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:4px 14px; border-radius:20px;">Most Popular</div>
         <h2 style="font-size:1.8rem; margin-bottom:8px;">60-Minute Private Intro</h2>
-        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Online or In-person By appointment</p>
+        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Online or In-person Â· By appointment</p>
         <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--primary-dark); line-height:1; margin-bottom:24px;">$35</div>
         <p style="line-height:1.8; color:var(--text-light); margin-bottom:36px;">Learn about our comprehensive meditation program and experience a guided meditation first-hand. Q&A with your guide CJ or Elizabeth.</p>
         <a href="https://www.wellnessliving.com/rs/appointment-new/brooklyn_meditation?id_class_tab=3&k_class_tab=76646" target="_blank" class="btn btn-primary" style="width:100%; text-align:center; display:block;">Book Now</a>
@@ -202,7 +202,7 @@
       <!-- 30-min Consultation -->
       <div style="border: 1px solid var(--border); border-radius: var(--border-radius); padding: 48px 36px; background: var(--white);">
         <h2 style="font-size:1.8rem; margin-bottom:8px;">30-Minute Consultation</h2>
-        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Online or In-person By appointment</p>
+        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Online or In-person Â· By appointment</p>
         <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--accent); line-height:1; margin-bottom:24px;">Free</div>
         <p style="line-height:1.8; color:var(--text-light); margin-bottom:36px;">Learn about our meditation method addressing your unique goals, challenges, and questions. A great first step with no commitment required.</p>
         <a href="https://www.wellnessliving.com/rs/appointment-new/brooklyn_meditation?id_class_tab=3&k_class_tab=75478" target="_blank" class="btn btn-secondary" style="width:100%; text-align:center; display:block;">Schedule Now</a>
@@ -211,7 +211,7 @@
       <!-- Open Session -->
       <div style="border: 1px solid var(--border); border-radius: var(--border-radius); padding: 48px 36px; background: var(--white);">
         <h2 style="font-size:1.8rem; margin-bottom:8px;">Open Session</h2>
-        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">In-person only No appointment needed</p>
+        <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">In-person only Â· No appointment needed</p>
         <div style="font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:600; color:var(--accent); line-height:1; margin-bottom:24px;">Free</div>
         <p style="line-height:1.8; color:var(--text-light); margin-bottom:16px;">Experience our meditation method and connect with a welcoming community. All are welcome â beginners and experienced meditators alike.</p>
         <div style="background: var(--primary-light); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px;">
@@ -271,8 +271,8 @@
       <a href="https://mail.google.com/mail/?view=cm&to=info@bklynmeditation.com&su=Inquiry" target="_blank" style="color:var(--primary-dark);">info@bklynmeditation.com</a>
     </p>
     <div style="margin-top:16px; font-size:0.9rem; color:var(--text-light); line-height:1.8;">
-      MonâFri: 9:00 AM â 8:00 PM<br>
-      SatâSun: 10:15 AM â 4:00 PM
+      Mon&ndash;Fri: 9:00 AM &ndash; 8:00 PM<br>
+      Sat&ndash;Sun: 10:15 AM &ndash; 4:00 PM
     </div>
     <div style="margin-top:32px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
       <a href="schedule.html" class="btn btn-secondary">View Class Schedule</a>
@@ -299,8 +299,8 @@
         <h4>Visit</h4>
         <ul>
           <li>Park Slope, Brooklyn, NY</li>
-          <li>MonâFri: 9AMâ8PM</li>
-          <li>SatâSun: 10:15AMâ4PM</li>
+          <li>Mon&ndash;Fri: 9AM&ndash;8PM</li>
+          <li>Sat&ndash;Sun: 10:15AM&ndash;4PM</li>
         </ul>
       </div>
       <div class="footer-col">
@@ -360,6 +360,7 @@
         });
       }
 
+      // Bounce spring effect
       let bounceAnim = null;
       function springTo(target) {
         cancelAnimationFrame(bounceAnim);
@@ -378,6 +379,7 @@
         else if (container.scrollLeft > max) springTo(max);
       });
 
+      // Dot update on scroll
       container.addEventListener('scroll', () => {
         if (!dots.length) return;
         const idx = Math.round(container.scrollLeft / (container.scrollWidth / cards.length));
