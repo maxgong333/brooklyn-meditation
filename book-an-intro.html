@@ -29,14 +29,16 @@
 
       /* 2. Booking cards &mdash; horizontal swipe carousel */
       .booking-section { padding: 48px 0 !important; }
+            .booking-section .container { overflow: visible !important; }
       .booking-cards-grid {
         display: flex !important;
         overflow-x: scroll;
+                overflow-y: visible;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         overscroll-behavior-x: contain;
         gap: 16px !important;
-        padding: 0 24px 24px !important;
+        padding: 20px 24px 24px !important;
         max-width: none !important;
         scrollbar-width: none;
         margin: 0 !important;
