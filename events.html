@@ -536,6 +536,36 @@
       display: flex; align-items: center; justify-content: center;
       margin-bottom: 20px;
     }
+
+    /* ── Sound Bath card photo ── */
+    .upcoming-card.dark-card {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .upcoming-card.dark-card::before {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 64%;
+      background: url('sound-bath-bowl.jpg') 32% center / cover no-repeat;
+      z-index: -2;
+    }
+    .upcoming-card.dark-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, #1C1C15 36%, rgba(28,28,21,0.88) 52%, rgba(28,28,21,0.45) 74%, rgba(28,28,21,0.12) 100%),
+        linear-gradient(0deg, rgba(28,28,21,0.75) 0%, rgba(28,28,21,0) 38%);
+    }
+    @media (max-width: 768px) {
+      .upcoming-card.dark-card::before { width: 78%; background-position: 30% 20%; }
+      .upcoming-card.dark-card::after {
+        background:
+          linear-gradient(90deg, #1C1C15 22%, rgba(28,28,21,0.9) 48%, rgba(28,28,21,0.6) 100%),
+          linear-gradient(0deg, rgba(28,28,21,0.85) 0%, rgba(28,28,21,0) 45%);
+      }
+    }
 </style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:url" content="https://brooklynmeditation.nyc/events.html" />
