@@ -118,7 +118,7 @@
       font-size: 0.9rem;
     }
 
-    /* ── Mobile: open sessions side by side ── */
+    /* ââ Mobile: open sessions side by side ââ */
     @media (max-width: 768px) {
       .open-session-grid {
         grid-template-columns: 1fr 1fr;
@@ -144,7 +144,7 @@
     }
     .open-session-dots { display: none; }
 
-    /* ── Mobile carousel: online cards ── */
+    /* ââ Mobile carousel: online cards ââ */
     @media (max-width: 768px) {
       .online-cards-grid {
         display: flex !important;
@@ -225,6 +225,235 @@
         padding: 32px 28px;
       }
     }
+
+    /* ââ Upcoming Events ââ */
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin-top: 48px;
+    }
+    @media (max-width: 768px) {
+      .upcoming-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+    .upcoming-card {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(44,36,22,0.08);
+    }
+    .upcoming-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(44,36,22,0.14);
+    }
+    /* Sound Bath card â dark */
+    .upcoming-card.dark-card {
+      background: #1C1C15;
+      color: #F5EFE0;
+    }
+    .upcoming-card.dark-card .uc-top {
+      padding: 36px 36px 0;
+    }
+    .upcoming-card.dark-card .uc-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(180,145,80,0.85);
+      margin-bottom: 10px;
+    }
+    .upcoming-card.dark-card .uc-date {
+      display: inline-block;
+      border: 1px solid rgba(180,145,80,0.35);
+      padding: 6px 18px;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(220,195,140,0.9);
+      margin-bottom: 20px;
+    }
+    .upcoming-card.dark-card h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1.15;
+      color: #F5EFE0;
+      margin-bottom: 24px;
+    }
+    .uc-deco-line {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(180,145,80,0.4), transparent);
+      margin: 0 36px;
+    }
+    .uc-schedule {
+      padding: 20px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .uc-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .uc-time {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: rgba(180,145,80,0.9);
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .uc-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(180,145,80,0.4);
+      flex-shrink: 0;
+    }
+    .uc-item {
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: rgba(230,220,200,0.8);
+    }
+    .uc-footer {
+      padding: 20px 36px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .uc-note {
+      font-style: italic;
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: rgba(200,185,155,0.7);
+    }
+    .btn-gold {
+      display: inline-block;
+      padding: 11px 28px;
+      border: 1px solid rgba(180,145,80,0.5);
+      border-radius: 2px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(220,195,140,0.9);
+      text-decoration: none;
+      background: rgba(180,145,80,0.1);
+      transition: var(--transition);
+    }
+    .btn-gold:hover {
+      background: rgba(180,145,80,0.2);
+      color: #EDD89A;
+    }
+    /* Holiday card â sage */
+    .upcoming-card.sage-card {
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+    .sage-card-top {
+      background: var(--primary);
+      padding: 36px 36px 28px;
+    }
+    .sage-card-top .uc-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 12px;
+    }
+    .sage-card-top h3 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 300;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .sage-card-top h3 em {
+      font-style: italic;
+    }
+    .sage-card-top .uc-dates {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-top: 10px;
+    }
+    .sage-card-body {
+      padding: 28px 36px 32px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .sage-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+    .sage-dollar {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--primary-dark);
+    }
+    .sage-amount {
+      font-family: var(--font-heading);
+      font-size: 3.6rem;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+    }
+    .sage-price-desc {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(31,35,40,0.5);
+      margin-bottom: 20px;
+    }
+    .sage-features {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+      margin-bottom: 24px;
+    }
+    .sage-features li {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: rgba(31,35,40,0.7);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sage-features li::before {
+      content: "";
+      display: inline-block;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+    @media (max-width: 480px) {
+      .upcoming-card.dark-card h3,
+      .sage-card-top h3 { font-size: 1.6rem; }
+      .sage-amount { font-size: 3rem; }
+      .sage-features { grid-template-columns: 1fr; }
+      .uc-footer { flex-direction: column; align-items: flex-start; }
+    }
   </style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:url" content="https://brooklynmeditation.nyc/events.html" />
@@ -249,22 +478,23 @@
     </a>
     <ul class="navbar-nav">
       <li><a href="index.html">Home</a></li>
-      <li class="dropdown"><a href="about.html">About ▾</a>
+      <li class="dropdown"><a href="about.html">About â¾</a>
         <div class="dropdown-menu">
           <a href="about.html">Our Method</a>
           <a href="about.html#founder">Founder</a>
           <a href="about.html#experiences">Experiences</a>
         </div>
       </li>
-      <li class="dropdown"><a href="membership.html">Membership ▾</a>
+      <li class="dropdown"><a href="membership.html">Membership â¾</a>
         <div class="dropdown-menu">
           <a href="membership.html">Plans & Pricing</a>
           <a href="schedule.html">Class Schedule</a>
           <a href="membership.html#faq">FAQ</a>
         </div>
       </li>
-      <li class="dropdown"><a href="events.html" style="color:var(--primary-dark)">Events ▾</a>
+      <li class="dropdown"><a href="events.html" style="color:var(--primary-dark)">Events â¾</a>
         <div class="dropdown-menu">
+          <a href="events.html#upcoming">Special Events</a>
           <a href="events.html#open">Open Sessions</a>
           <a href="events.html#workshops">Workshops</a>
           <a href="events.html#online">Free Online Series</a>
@@ -281,7 +511,7 @@
 </nav>
 
 <div class="mobile-nav" id="mobileNav">
-  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <button class="mobile-nav-close" id="mobileNavClose">â</button>
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
@@ -297,16 +527,86 @@
 <div class="page-header">
   <span class="section-label">Events & Workshops</span>
   <h1>Join the Community</h1>
-  <p style="max-width:520px; margin:16px auto 0;">From free open sessions to deep-dive workshops — there's always something to support your practice.</p>
+  <p style="max-width:520px; margin:16px auto 0;">From free open sessions to deep-dive workshops â there's always something to support your practice.</p>
 </div>
+<!-- ââ Upcoming Special Events ââ -->
+<section id="upcoming" style="background: var(--white); padding: 80px 24px;">>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Upcoming</span>
+      <h2>Special Events</h2>
+      <p>Mark your calendar â these are not to be missed.</p>
+    </div>
+    <div class="upcoming-grid">
 
-<!-- ── Free Open Sessions ── -->
+      <!-- Card 1: End of Year Sound Bath -->
+      <div class="upcoming-card dark-card">
+        <div class="uc-top">
+          <div class="uc-label">End of Year Gathering</div>
+          <div class="uc-date">Sunday, December 20, 2026</div>
+          <h3>Guided Meditation<br><em style="color:rgba(180,145,80,0.9);">&amp; Sound Bath</em></h3>
+        </div>
+        <div class="uc-deco-line"></div>
+        <div class="uc-schedule">
+          <div class="uc-row">
+            <span class="uc-time">2:00 PM</span>
+            <span class="uc-dot"></span>
+            <span class="uc-item">Guided Meditation</span>
+          </div>
+          <div class="uc-row">
+            <span class="uc-time">3:00 PM</span>
+            <span class="uc-dot"></span>
+            <span class="uc-item">Sound Bath by Mely</span>
+          </div>
+          <div class="uc-row">
+            <span class="uc-time">4:00 PM</span>
+            <span class="uc-dot"></span>
+            <span class="uc-item">Light Dinner</span>
+          </div>
+        </div>
+        <div class="uc-footer">
+          <span class="uc-note">Open to family &amp; friends</span>
+          <a href="https://www.wellnessliving.com/rs/book-process.html?id_book_process=2&id_book_process_back=6&id_class_tab=2&id_place=2&dt_date=2026-12-20+19%3A00%3A00&k_class_period=19116339&k_business=760342&id_mode=2" target="_blank" class="btn-gold">Reserve Your Spot</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Holiday Meditation Special -->
+      <div class="upcoming-card sage-card">
+        <div class="sage-card-top">
+          <div class="uc-label">Limited Time Offer</div>
+          <h3>Holiday<br><em>Meditation Special</em></h3>
+          <div class="uc-dates">Nov 16, 2026 &ndash; Jan 10, 2027</div>
+        </div>
+        <div class="sage-card-body">
+          <div>
+            <div class="sage-price-row">
+              <span class="sage-dollar">$</span>
+              <span class="sage-amount">250</span>
+            </div>
+            <div class="sage-price-desc">Two months &nbsp;&middot;&nbsp; Unlimited classes</div>
+            <ul class="sage-features">
+              <li>In-person &amp; online access</li>
+              <li>Private sessions</li>
+              <li>Personal progress check-ins</li>
+              <li>Community events</li>
+            </ul>
+          </div>
+          <a href="https://brooklynmeditation.nyc/membership.html" class="btn btn-primary" style="text-align:center; justify-content:center;">Claim This Offer</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ââ Free Open Sessions ââ -->
 <section id="open" style="background: var(--bg); padding: 80px 24px;">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Open to Everyone</span>
       <h2>Free Open Meditation Sessions</h2>
-      <p>No experience needed. Just come and sit — it's that simple.</p>
+      <p>No experience needed. Just come and sit â it's that simple.</p>
     </div>
     <div class="open-session-grid" id="openSessionGrid">
       <div class="open-session-card">
@@ -333,29 +633,29 @@
 </section>
 
 
-<!-- ── Free Online Series ── -->
+<!-- ââ Free Online Series ââ -->
 <section id="online" style="background: var(--primary-light); padding: 80px 24px;">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Free Online</span>
       <h2>Free Online Meditation Series</h2>
-      <p>Access our growing library of free online content — guided sessions, talks, and resources available to everyone.</p>
+      <p>Access our growing library of free online content â guided sessions, talks, and resources available to everyone.</p>
     </div>
     <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; margin-top:48px; align-items:stretch;" class="online-cards-grid">
       <div class="card" style="padding:32px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-        <div style="font-size:2rem; margin-bottom:16px;">🧘</div>
+        <div style="font-size:2rem; margin-bottom:16px;">ð§</div>
         <h4 style="margin-bottom:10px;">Live Guided Classes &amp; Workshops</h4>
         <p style="font-size:0.9rem; flex:1;">Join live guided meditation classes and workshops with practitioners from around the world.</p>
         <a href="https://omemeditation.org/" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Visit OME Meditation</a>
       </div>
       <div class="card" style="padding:32px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-        <div style="font-size:2rem; margin-bottom:16px;">🎧</div>
+        <div style="font-size:2rem; margin-bottom:16px;">ð§</div>
         <h4 style="margin-bottom:10px;">Guided Meditation Videos</h4>
         <p style="font-size:0.9rem; flex:1;">Free guided meditation videos to support your practice at home, anytime.</p>
         <a href="https://www.youtube.com/@HappinessHub4U" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Watch on YouTube</a>
       </div>
       <div class="card" style="padding:32px; display:flex; flex-direction:column; align-items:center; text-align:center;">
-        <div style="font-size:2rem; margin-bottom:16px;">💬</div>
+        <div style="font-size:2rem; margin-bottom:16px;">ð¬</div>
         <h4 style="margin-bottom:10px;">Live Q&amp;A Sessions</h4>
         <p style="font-size:0.9rem; flex:1;">Book a free 30-minute consultation with a guide to get your questions answered.</p>
         <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75478&k_service=304065" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Book Consultation</a>
@@ -370,261 +670,147 @@
   </div>
 </section>
 
-<!-- ── Corporate ── -->
-<section id="corporate" class="corporate-section" style="padding: 80px 24px;">
+
+<!-- ââ Paid Classes ââ -->
+<section id="classes" style="background: var(--white); padding: 80px 24px;">
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <span class="section-label">Corporate & Teams</span>
-        <h2>Bring meditation to your workplace</h2>
-        <p>We offer customized workshops for teams and organizations — from a single lunchtime session to multi-week programs. Our workshops are practical, evidence-based, and accessible to every level of experience.</p>
-        <p>Past clients include companies in tech, finance, healthcare, education, and the nonprofit sector.</p>
-        <div style="display:flex; gap:16px; margin-top:32px; flex-wrap:wrap;">
-          <a href="https://mail.google.com/mail/?view=cm&to=info@bklynmeditation.com&su=Corporate+Workshop+Inquiry" target="_blank" class="btn btn-primary">Request a Quote</a>
-          <a href="tel:7186221868" class="btn btn-outline-white">Call Us: (718) 622-1868</a>
-        </div>
+    <div class="section-header">
+      <span class="section-label">Paid Classes</span>
+      <h2>Regular Meditation Classes</h2>
+      <p>Small-group in-person classes for deeper practice and community.</p>
+    </div>
+    <div class="event-grid" id="eventGrid">
+
+      <!-- Monday -->
+      <div class="event-card">
+        <div class="day">Monday</div>
+        <div class="time">7:30 PM</div>
+        <div class="class-name">Grounding Meditation</div>
+        <div class="class-details">In-person &amp; Online | 60 min | All levels</div>
+      </div>
+
+      <!-- Wednesday -->
+      <div class="event-card">
+        <div class="day">Wednesday</div>
+        <div class="time">7:30 PM</div>
+        <div class="class-name">Stress Release</div>
+        <div class="class-details">In-person &amp; Online | 60 min | All levels</div>
+      </div>
+
+      <!-- Thursday -->
+      <div class="event-card">
+        <div class="day">Thursday</div>
+        <div class="time">7:30 PM</div>
+        <div class="class-name">Deep Peace</div>
+        <div class="class-details">In-person &amp; Online | 60 min | All levels</div>
+      </div>
+
+      <!-- Saturday -->
+      <div class="event-card">
+        <div class="day">Saturday</div>
+        <div class="time">11:00 AM</div>
+        <div class="class-name">Morning Awakening</div>
+        <div class="class-details">In-person &amp; Online | 60 min | All levels</div>
+      </div>
+
+    </div>
+    <!-- dots -->
+    <div class="event-dots" id="eventDots">
+      <span class="event-dot active"></span>
+      <span class="event-dot"></span>
+      <span class="event-dot"></span>
+      <span class="event-dot"></span>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-primary">Browse All Classes</a>
+    </div>
+  </div>
+</section>
+
+<!-- ââ Private Services ââ -->
+<section id="private" style="background: var(--primary-light); padding: 80px 24px;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">One-on-One</span>
+      <h2>Private Services</h2>
+      <p>Deep personalized practice with direct teacher guidance.</p>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:24px; margin-top:48px; align-items:stretch;" class="private-cards-grid">
+      <div class="card" style="padding:32px; display:flex; flex-direction:column;">
+        <div style="font-size:2rem; margin-bottom:16px;">ð</div>
+        <h4 style="margin-bottom:10px;">Private Meditation</h4>
+        <p style="font-size:0.9rem; flex:1;">One-on-one sessions tailored to your needs. Ideal for beginners or those wishing to deepen their practice.</p>
+        <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75476&k_service=304060" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Book Session</a>
+      </div>
+      <div class="card" style="padding:32px; display:flex; flex-direction:column;">
+        <div style="font-size:2rem; margin-bottom:16px;">ð</div>
+        <h4 style="margin-bottom:10px;">Shamanic Healing</h4>
+        <p style="font-size:0.9rem; flex:1;">Ceremonial healing through ancient shamanic traditions. Energy cleansing and spiritual guidance.</p>
+        <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75476*ark_service=304060" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Book Session</a>
+      </div>
+      <div class="card" style="padding:32px; display:flex; flex-direction:column;">
+        <div style="font-size:2rem; margin-bottom:16px;">ð</div>
+        <h4 style="margin-bottom:10px;">Sound Healing</h4>
+        <p style="font-size:0.9rem; flex:1;">Restorative sound therapy using singing bowls, gongs, and other instruments.</p>
+        <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75478&k_service=304065" target="_blank" class="btn btn-secondary" style="margin-top:20px; width:fit-content;">Book Session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ââ Footer ââ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Brooklyn Meditation" style="height:40px; filter:invert(1) brightness(1.2); margin-bottom:16px;">
+        <p style="font-size:0.9rem; opacity:0.7;">Accessible meditation for everyone in Park Slope and beyond.</p>
       </div>
       <div>
-        <div class="corporate-features">
-          <div class="corporate-feature">
-            <h4>On-site or Virtual</h4>
-            <p>We come to your office or deliver via Zoom — whichever works best for your team.</p>
-          </div>
-          <div class="corporate-feature">
-            <h4>Fully Customized</h4>
-            <p>Workshop content tailored to your team's needs: stress, focus, leadership, burnout.</p>
-          </div>
-          <div class="corporate-feature">
-            <h4>Any Group Size</h4>
-            <p>From small teams of 5 to company-wide events of 100+.</p>
-          </div>
-          <div class="corporate-feature">
-            <h4>Ongoing Programs</h4>
-            <p>Weekly or monthly recurring sessions for sustained culture change.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── Client Logo Marquee ── -->
-<div style="background: linear-gradient(to bottom, #ffffff 0%, #1a1f24 100%);">
-<section style="background: transparent; padding: 40px 0; overflow:hidden;">
-  <p style="text-align:center; color:rgba(0,0,0,0.35); font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 28px;">Trusted by organizations across industries</p>
-  <div class="logo-marquee-wrapper" style="overflow:hidden; position:relative;">
-    <div style="position:absolute; left:0; top:0; bottom:0; width:80px; background:linear-gradient(to right, rgba(255,255,255,0.95), transparent); z-index:2;"></div>
-    <div style="position:absolute; right:0; top:0; bottom:0; width:80px; background:linear-gradient(to left, rgba(255,255,255,0.95), transparent); z-index:2;"></div>
-    <div class="logo-marquee-track">
-      <!-- Set 1 -->
-      <div class="logo-item"><img src="logos/nyu.webp" alt="NYU" /></div>
-      <div class="logo-item"><img src="logos/yelp.webp" alt="Yelp" /></div>
-      <div class="logo-item"><img src="logos/Shutterstock.png" alt="Shutterstock" /></div>
-      <div class="logo-item"><img src="logos/charles-schwab.png" alt="Charles Schwab" /></div>
-      <div class="logo-item"><img src="logos/spanx.png" alt="SPANX" /></div>
-      <div class="logo-item"><img src="logos/aceable.png" alt="Aceable" /></div>
-      <div class="logo-item"><img src="logos/solarone.webp" alt="SolarOne" /></div>
-      <div class="logo-item"><img src="logos/amherst.webp" alt="Amherst" /></div>
-      <div class="logo-item"><img src="logos/issue-one.png" alt="Issue One" /></div>
-      <div class="logo-item"><img src="logos/pm-pediatrics.png" alt="PM Pediatrics" /></div>
-      <div class="logo-item"><img src="logos/tocci.png" alt="Tocci Chiropractic" /></div>
-      <div class="logo-item"><img src="logos/palomino.png" alt="Palomino Park Resort" /></div>
-      <div class="logo-item"><img src="logos/Konjo Beauty.png" alt="Konjo Beauty" /></div>
-      <div class="logo-item"><img src="logos/f1rstrust-bank-logo.png" alt="FirstTrust" /></div>
-      <div class="logo-item"><img src="logos/Seal_of_Brooklyn,_New_York.svg.webp" alt="City of Brooklyn" /></div>
-      <!-- Set 2 (duplicate for seamless loop) -->
-      <div class="logo-item"><img src="logos/nyu.webp" alt="NYU" /></div>
-      <div class="logo-item"><img src="logos/yelp.webp" alt="Yelp" /></div>
-      <div class="logo-item"><img src="logos/Shutterstock.png" alt="Shutterstock" /></div>
-      <div class="logo-item"><img src="logos/charles-schwab.png" alt="Charles Schwab" /></div>
-      <div class="logo-item"><img src="logos/spanx.png" alt="SPANX" /></div>
-      <div class="logo-item"><img src="logos/aceable.png" alt="Aceable" /></div>
-      <div class="logo-item"><img src="logos/solarone.webp" alt="SolarOne" /></div>
-      <div class="logo-item"><img src="logos/amherst.webp" alt="Amherst" /></div>
-      <div class="logo-item"><img src="logos/issue-one.png" alt="Issue One" /></div>
-      <div class="logo-item"><img src="logos/pm-pediatrics.png" alt="PM Pediatrics" /></div>
-      <div class="logo-item"><img src="logos/tocci.png" alt="Tocci Chiropractic" /></div>
-      <div class="logo-item"><img src="logos/palomino.png" alt="Palomino Park Resort" /></div>
-      <div class="logo-item"><img src="logos/Konjo Beauty.png" alt="Konjo Beauty" /></div>
-      <div class="logo-item"><img src="logos/f1rstrust-bank-logo.png" alt="FirstTrust" /></div>
-      <div class="logo-item"><img src="logos/Seal_of_Brooklyn,_New_York.svg.webp" alt="City of Brooklyn" /></div>
-    </div>
-  </div>
-</section>
-
-<style>
-.logo-marquee-track {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  animation: marquee-scroll 35s linear infinite;
-}
-.logo-marquee-track:hover { animation-play-state: paused; }
-.logo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 40px;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  height: 72px;
-  flex-shrink: 0;
-}
-.logo-item img {
-  height: 40px;
-  width: auto;
-  max-width: 130px;
-  object-fit: contain;
-  display: block;
-}
-@keyframes marquee-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-</style>
-
-<!-- ── Corporate Workshop Photos ── -->
-<section style="background:transparent; padding: 40px 24px 64px;">
-  <div class="container">
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; max-width:960px; margin:0 auto;">
-      <div style="grid-column: span 2;">
-        <img src="corporate_workshop_3.jpg" alt="Meditation group session" style="width:100%; height:360px; object-fit:cover; border-radius:16px; display:block;" />
-      </div>
-      <img src="corporate_workshop_1.jpg" alt="Corporate workshop 1" style="width:100%; height:240px; object-fit:cover; border-radius:16px; display:block;" />
-      <img src="corporate_workshop_2.jpg" alt="Corporate workshop 2" style="width:100%; height:240px; object-fit:cover; border-radius:16px; display:block;" />
-    </div>
-  </div>
-</section>
-</div><!-- end gradient wrapper -->
-
-<!-- ── Acts of Service ── -->
-<section style="background: var(--white); padding: 80px 24px;">
-  <div class="container">
-    <div style="max-width:680px; margin:0 auto; text-align:center;">
-      <span class="section-label">Community</span>
-      <h2>Acts of Service</h2>
-      <p style="margin-top:16px; font-size:1.05rem;">We believe that inner peace leads naturally to outward care. Our Acts of Service program connects meditators with meaningful volunteer opportunities in the Park Slope community.</p>
-      <p style="margin-top:12px;">From neighborhood cleanups to visiting soup kitchens, we practice going outward as well as inward.</p>
-      <div style="display:flex; gap:16px; justify-content:center; margin-top:32px; flex-wrap:wrap;">
-        <a href="https://www.wellnessliving.com/schedule/brooklyn_meditation?id_class_tab=1&k_class=1032032" target="_blank" class="btn btn-primary">Get Involved</a>
-        <a href="https://www.wellnessliving.com/rs/catalog-view.html?k_business=760342&id_sale=4&k_id=2546695&k_option=7471377" target="_blank" class="btn btn-secondary">Donate</a>
-      </div>
-    </div>
-
-    <!-- Acts of Service Photos -->
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; max-width:900px; margin:48px auto 0;">
-      <img src="aos_photo_1.jpg" alt="Brooklyn Meditation volunteers" style="width:100%; height:260px; object-fit:cover; object-position:center top; border-radius:14px; display:block;" />
-      <img src="aos_photo_2.jpg" alt="Community service volunteers" style="width:100%; height:260px; object-fit:cover; border-radius:14px; display:block;" />
-      <img src="aos_photo_3.jpg" alt="Soup kitchen volunteers" style="width:100%; height:260px; object-fit:cover; border-radius:14px; display:block;" />
-      <img src="aos_photo_4.jpg" alt="Brooklyn College Academy event" style="width:100%; height:260px; object-fit:cover; border-radius:14px; display:block;" />
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-banner">
-  <div class="container">
-    <span class="section-label" style="display:block; margin-bottom:16px;">Not sure where to start?</span>
-    <h2>Come to a free session first</h2>
-    <p>No commitment. No experience needed. Just show up.</p>
-    <div class="btn-group">
-      <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=75478&k_service=304065" target="_blank" class="btn btn-primary">30 Minute Consultation</a>
-      <a href="schedule.html" class="btn btn-secondary">See Full Schedule</a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="brand-name">Brooklyn Meditation</div>
-        <div class="brand-sub">Park Slope · Est. 2015</div>
-        <p>A guided meditation practice for lasting peace, clarity, and joy.</p>
-        <div class="footer-contact-info">
-          <a href="tel:7186221868">📞 (718) 622-1868</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=info@bklynmeditation.com&su=Inquiry" target="_blank">✉ info@bklynmeditation.com</a>
-          <a href="https://maps.app.goo.gl/2hmYUADCtftcdBpU8" target="_blank">📍 833 Union St, 2nd Floor, Park Slope 11215</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h5>About</h5>
+        <h4 style="margin-bottom:12px;">Quick Links</h4>
         <ul>
-          <li><a href="about.html">Our Method</a></li>
-          <li><a href="about.html#founder">Founder</a></li>
-          <li><a href="about.html#team">Guides</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="teachers.html">Teachers</a></li>
+          <li><a href="book-intro.html">Book Intro</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h5>Membership</h5>
-        <ul>
-          <li><a href="membership.html">Plans & Pricing</a></li>
-          <li><a href="schedule.html">Class Schedule</a></li>
-          <li><a href="membership.html#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Events</h5>
-        <ul>
-          <li><a href="events.html#open">Free Open Sessions</a></li>
-          <li><a href="events.html#workshops">Workshops</a></li>
-          <li><a href="events.html#online">Free Online</a></li>
-          <li><a href="events.html#corporate">Corporate</a></li>
-        </ul>
+      <div>
+        <h4 style="margin-bottom:12px;">Visit Us</h4>
+        <p style="font-size:0.9rem; opacity:0.8; margin-bottom:8px;">833 Union Street<br>2 Floor<br>Park Slope, Brooklyn 11215</p>
+        <a href="https://maps.app.goo.gl/2hmYUADCtftcdBpU8" target="_blank" style="color:var(--primary); font-size:0.9rem;">Get Directions â</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Brooklyn Meditation. All rights reserved.</span>
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/bklynmeditation/" target="_blank" class="social-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </a>
-        <a href="https://www.facebook.com/brooklyn.meditation/" target="_blank" class="social-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-        <a href="https://www.youtube.com/channel/UC7eDlQXFxyxiVDfOb5kyuow" target="_blank" class="social-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.97C5.12 20 12 20 12 20s6.88 0 8.6-.45a2.78 2.78 0 0 0 1.94-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" stroke="none"/></svg>
-        </a>
-      </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.15); margin-top:48px; padding-top:24px; text-align:center; font-size:0.85rem; opacity:0.6;">
+      &copy; 2026 Brooklyn Meditation â¢ All rights reserved
     </div>
   </div>
 </footer>
 
 <script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
-  });
-  document.getElementById('menuToggle').addEventListener('click', () => {
-    document.getElementById('mobileNav').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
-  document.getElementById('mobileNavClose').addEventListener('click', () => {
-    document.getElementById('mobileNav').classList.remove('open');
-    document.body.style.overflow = '';
-  });
-
-  // Open session carousel dots
-  const openGrid = document.getElementById('openSessionGrid');
-  const openDots = document.querySelectorAll('.open-session-dot');
-  if (openGrid && openDots.length) {
-    openGrid.addEventListener('scroll', () => {
-      const idx = Math.round(openGrid.scrollLeft / openGrid.clientWidth);
-      openDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-    }, { passive: true });
+  function initScrollCarousel(gridId, dotsId) {
+    const grid = document.getElementById(gridId);
+    const dotsContainer = document.getElementById(dotsId);
+    if (!grid || !dotsContainer) return;
+    const dots = dotsContainer.querySelectorAll('span');
+    function updateDots() {
+      const itemWidth = grid.scrollWidth / dots.length;
+      const index = Math.round(grid.scrollLeft / itemWidth);
+      dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    }
+    grid.addEventListener('scroll', updateDots, { passive: true });
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        const itemWidth = grid.scrollWidth / dots.length;
+        grid.scrollTo({ left: itemWidth * i, behavior: 'smooth' });
+      });
+    });
   }
-
-  // Online cards carousel dots
-  const onlineGrid = document.querySelector('.online-cards-grid');
-  const onlineDots = document.querySelectorAll('.online-dot');
-  if (onlineGrid && onlineDots.length) {
-    onlineGrid.addEventListener('scroll', () => {
-      const idx = Math.round(onlineGrid.scrollLeft / onlineGrid.clientWidth);
-      onlineDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-    }, { passive: true });
-  }
+  initScrollCarousel('eventGrid', 'eventDots');
+  initScrollCarousel('openSessionGrid', 'openSessionDots');
+  initScrollCarousel('onlineDots', 'onlineDots');
+  initScrollCarousel('privateCardsGrid', 'privateDots');
 </script>
-
-
-<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d693e638-b93f-4e7f-b31f-70aef5f0f688";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </body>
 </html>
