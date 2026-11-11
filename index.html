@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-PPWKCZDB');</script>
-  <!-- End Google Tag Manager -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YXKECY7C2L"></script>
   <script>
@@ -39,10 +32,6 @@
   <meta name="twitter:image" content="https://brooklynmeditation.nyc/og-image.jpg" />
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PPWKCZDB"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
 
 <!-- ── Navigation ── -->
 <nav class="navbar" id="navbar">
@@ -315,6 +304,7 @@
 <section class="benefits-section">
   <div class="container">
     <div class="section-header">
+      <span class="section-label">Benefits</span>
       <h2>What changes when you meditate</h2>
       <p>Thousands of practitioners have found that this practice reaches the root — not just the symptoms.</p>
     </div>
@@ -323,15 +313,15 @@
     <div class="benefits-tabs" style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:48px;">
       <button onclick="showTestimonial('clarity')" id="btn-clarity"
         style="padding:14px 28px; border-radius:50px; border:2px solid var(--primary-dark); background:var(--primary-dark); color:#fff; font-size:0.95rem; font-family:inherit; cursor:pointer; transition:all 0.2s; font-weight:500;">
-        Objectivity &amp; Clarity
+        🌿 Objectivity &amp; Clarity
       </button>
       <button onclick="showTestimonial('concentration')" id="btn-concentration"
         style="padding:14px 28px; border-radius:50px; border:2px solid var(--primary-dark); background:transparent; color:var(--primary-dark); font-size:0.95rem; font-family:inherit; cursor:pointer; transition:all 0.2s; font-weight:500;">
-        Concentration
+        ⚡ Concentration
       </button>
       <button onclick="showTestimonial('past')" id="btn-past"
         style="padding:14px 28px; border-radius:50px; border:2px solid var(--primary-dark); background:transparent; color:var(--primary-dark); font-size:0.95rem; font-family:inherit; cursor:pointer; transition:all 0.2s; font-weight:500;">
-        Letting Go
+        🧠 Letting Go
       </button>
     </div>
 
@@ -399,6 +389,7 @@ function showTestimonial(id) {
 <section id="stats-section" style="padding: 88px 24px; background: #F2F2F2;">
   <div class="container">
     <div class="section-header">
+      <span class="section-label">Research-backed</span>
       <h2>Real, Lasting Results</h2>
       <p>A study of 473 new meditators showed the following results over a 3-month period:</p>
     </div>
@@ -509,6 +500,7 @@ function showTestimonial(id) {
 <!-- ── CTA Banner ── -->
 <section class="cta-banner">
   <div class="container">
+    <span class="section-label" style="display:block; margin-bottom:16px;">Ready to Begin?</span>
     <h2>Find out what meditation can do for you</h2>
     <div class="btn-group" style="margin-top:32px;">
       <a href="https://www.wellnessliving.com/rs/appointment-start.html?id_class_tab=3&id_mode=1&k_business=760342&k_class_tab=76646&k_service=313512" target="_blank" class="btn btn-primary">Book a Private Intro — In-Person</a>
@@ -686,5 +678,180 @@ function showTestimonial(id) {
 
 
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d693e638-b93f-4e7f-b31f-70aef5f0f688";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+<!-- ── Special Events Popup ── -->
+<style>
+#bm-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(20, 18, 14, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+#bm-overlay.open { opacity: 1; visibility: visible; }
+
+#bm-modal {
+  background: #F7F6F2;
+  max-width: 580px; width: 100%;
+  position: relative;
+  transform: translateY(18px);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+#bm-overlay.open #bm-modal { transform: translateY(0); }
+
+#bm-modal-top {
+  background: #2B2F28;
+  padding: 36px 36px 28px;
+  position: relative;
+}
+#bm-modal-top::after {
+  content: '';
+  position: absolute; bottom: 0; left: 36px; right: 36px;
+  height: 1px; background: rgba(180,145,80,0.35);
+}
+.bm-popup-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: rgba(180,145,80,0.85);
+  margin-bottom: 10px;
+}
+.bm-popup-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem; font-weight: 400; line-height: 1.2;
+  color: #F5EFE0; margin: 0;
+}
+.bm-popup-title em { font-style: italic; color: rgba(180,145,80,0.9); }
+
+#bm-close {
+  position: absolute; top: 16px; right: 18px;
+  background: none; border: none; cursor: pointer;
+  color: rgba(245,239,224,0.5); font-size: 1.3rem; line-height: 1;
+  padding: 4px 8px;
+  font-family: 'Jost', sans-serif; font-weight: 300;
+  transition: color 0.2s;
+}
+#bm-close:hover { color: rgba(245,239,224,0.9); }
+
+#bm-modal-body { padding: 24px 36px 32px; }
+
+.bm-events-wrap {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  margin-bottom: 24px;
+}
+.bm-ev {
+  padding: 18px 16px;
+  border: 1px solid rgba(124,143,122,0.25);
+}
+.bm-ev-label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #7C8F7A;
+  margin-bottom: 6px;
+}
+.bm-ev-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem; font-weight: 500; line-height: 1.3;
+  color: #1F2328; margin-bottom: 5px;
+}
+.bm-ev-detail {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem; color: #6B6459; line-height: 1.5;
+}
+.bm-ev.dark {
+  background: #1F2328; border-color: rgba(180,145,80,0.3);
+}
+.bm-ev.dark .bm-ev-label { color: rgba(180,145,80,0.8); }
+.bm-ev.dark .bm-ev-name { color: #F5EFE0; }
+.bm-ev.dark .bm-ev-detail { color: rgba(245,239,224,0.55); }
+
+.bm-popup-actions {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+.bm-btn-primary {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none;
+  background: #7C8F7A; color: #fff;
+  padding: 11px 22px; display: inline-block;
+  transition: background 0.2s;
+}
+.bm-btn-primary:hover { background: #5F7A6A; }
+.bm-btn-skip {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem; color: #9B9387; text-decoration: none;
+  cursor: pointer; background: none; border: none;
+  padding: 0; letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+.bm-btn-skip:hover { color: #1F2328; }
+
+@media (max-width: 480px) {
+  #bm-modal-top { padding: 28px 24px 22px; }
+  .bm-popup-title { font-size: 1.55rem; }
+  #bm-modal-body { padding: 20px 24px 26px; }
+  .bm-events-wrap { grid-template-columns: 1fr; gap: 10px; }
+  .bm-popup-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .bm-btn-primary { width: 100%; text-align: center; }
+}
+</style>
+
+<div id="bm-overlay" role="dialog" aria-modal="true" aria-labelledby="bm-popup-heading">
+  <div id="bm-modal">
+    <div id="bm-modal-top">
+      <button id="bm-close" onclick="bmClosePopup()" aria-label="Close">&#x2715;</button>
+      <div class="bm-popup-eyebrow">Coming Up at the Studio</div>
+      <h2 class="bm-popup-title" id="bm-popup-heading">Something <em>special</em><br>this December</h2>
+    </div>
+    <div id="bm-modal-body">
+      <div class="bm-events-wrap">
+        <div class="bm-ev dark">
+          <div class="bm-ev-label">Dec 20 &middot; Sound Bath</div>
+          <div class="bm-ev-name">End of Year Guided Meditation &amp; Sound Bath</div>
+          <div class="bm-ev-detail">Sun, 2 PM &ndash; 5 PM<br>Open to family &amp; friends</div>
+        </div>
+        <div class="bm-ev">
+          <div class="bm-ev-label">Nov 16 &ndash; Jan 10</div>
+          <div class="bm-ev-name">Holiday Meditation Special</div>
+          <div class="bm-ev-detail">2 months unlimited<br><strong style="color:#1F2328;">$250</strong> &mdash; limited spots</div>
+        </div>
+      </div>
+      <div class="bm-popup-actions">
+        <a href="events.html#upcoming" class="bm-btn-primary" onclick="bmClosePopup()">View Special Events</a>
+        <button class="bm-btn-skip" onclick="bmClosePopup()">Maybe later</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var today = new Date().toDateString();
+  if (localStorage.getItem('bm_popup') === today) return;
+  setTimeout(function () {
+    var overlay = document.getElementById('bm-overlay');
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { overlay.classList.add('open'); });
+    });
+  }, 1000);
+})();
+
+function bmClosePopup() {
+  var overlay = document.getElementById('bm-overlay');
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  localStorage.setItem('bm_popup', new Date().toDateString());
+  setTimeout(function () { overlay.style.display = 'none'; }, 450);
+}
+
+document.getElementById('bm-overlay').addEventListener('click', function (e) {
+  if (e.target === this) bmClosePopup();
+});
+</script>
+
 </body>
 </html>
