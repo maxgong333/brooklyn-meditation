@@ -800,6 +800,33 @@ function showTestimonial(id) {
   .bm-btn-primary { width: 100%; text-align: center; }
   .bm-btn-skip { text-align: center; }
 }
+
+/* Sound bath photo in popup card */
+.bm-ev.dark {
+  position: relative; overflow: hidden; isolation: isolate;
+  background: #1C1C15; border-color: #1C1C15;
+}
+.bm-ev.dark::before {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: 72%;
+  background: url('sound-bath-bowl.jpg') 32% center / cover no-repeat;
+  z-index: -2;
+}
+.bm-ev.dark::after {
+  content: '';
+  position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(90deg, #1C1C15 30%, rgba(28,28,21,0.86) 52%, rgba(28,28,21,0.45) 78%, rgba(28,28,21,0.15) 100%),
+    linear-gradient(0deg, rgba(28,28,21,0.7) 0%, rgba(28,28,21,0) 45%);
+}
+@media (max-width: 480px) {
+  .bm-ev.dark::before { width: 60%; }
+  .bm-ev.dark::after {
+    background:
+      linear-gradient(90deg, #1C1C15 40%, rgba(28,28,21,0.8) 65%, rgba(28,28,21,0.3) 100%);
+  }
+}
 </style>
 
 <div id="bm-overlay" role="dialog" aria-modal="true" aria-labelledby="bm-popup-heading">
