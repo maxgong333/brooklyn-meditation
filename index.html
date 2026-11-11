@@ -683,8 +683,8 @@ function showTestimonial(id) {
 <style>
 #bm-overlay {
   position: fixed; inset: 0; z-index: 9999;
-  background: rgba(20, 18, 14, 0.72);
-  backdrop-filter: blur(4px);
+  background: rgba(31, 35, 40, 0.42);
+  backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
   opacity: 0; visibility: hidden;
@@ -693,78 +693,80 @@ function showTestimonial(id) {
 #bm-overlay.open { opacity: 1; visibility: visible; }
 
 #bm-modal {
-  background: #F7F6F2;
+  background: #FBFAF7;
   max-width: 580px; width: 100%;
   position: relative;
+  box-shadow: 0 24px 60px rgba(31,35,40,0.18);
   transform: translateY(18px);
   transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 #bm-overlay.open #bm-modal { transform: translateY(0); }
 
 #bm-modal-top {
-  background: #2B2F28;
+  background: #EFEAE1;
   padding: 36px 36px 28px;
   position: relative;
 }
 #bm-modal-top::after {
   content: '';
   position: absolute; bottom: 0; left: 36px; right: 36px;
-  height: 1px; background: rgba(180,145,80,0.35);
+  height: 1px; background: rgba(180,145,80,0.45);
 }
 .bm-popup-eyebrow {
   font-family: 'Jost', sans-serif;
-  font-size: 0.65rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(180,145,80,0.85);
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #8A6D38;
   margin-bottom: 10px;
 }
 .bm-popup-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.9rem; font-weight: 400; line-height: 1.2;
-  color: #F5EFE0; margin: 0;
+  font-size: 2rem; font-weight: 500; line-height: 1.2;
+  color: #1F2328; margin: 0;
 }
-.bm-popup-title em { font-style: italic; color: rgba(180,145,80,0.9); }
+.bm-popup-title em { font-style: italic; color: #9A7A3F; }
 
 #bm-close {
   position: absolute; top: 16px; right: 18px;
   background: none; border: none; cursor: pointer;
-  color: rgba(245,239,224,0.5); font-size: 1.3rem; line-height: 1;
+  color: rgba(31,35,40,0.45); font-size: 1.3rem; line-height: 1;
   padding: 4px 8px;
   font-family: 'Jost', sans-serif; font-weight: 300;
   transition: color 0.2s;
 }
-#bm-close:hover { color: rgba(245,239,224,0.9); }
+#bm-close:hover { color: rgba(31,35,40,0.9); }
 
-#bm-modal-body { padding: 24px 36px 32px; }
+#bm-modal-body { padding: 26px 36px 32px; }
 
 .bm-events-wrap {
   display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 .bm-ev {
-  padding: 18px 16px;
-  border: 1px solid rgba(124,143,122,0.25);
+  padding: 20px 18px;
+  background: #FFFFFF;
+  border: 1px solid rgba(124,143,122,0.3);
 }
 .bm-ev-label {
   font-family: 'Jost', sans-serif;
-  font-size: 0.6rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: #7C8F7A;
-  margin-bottom: 6px;
+  font-size: 0.66rem; font-weight: 500; letter-spacing: 0.16em;
+  text-transform: uppercase; color: #5F7A6A;
+  margin-bottom: 8px;
 }
 .bm-ev-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.08rem; font-weight: 500; line-height: 1.3;
-  color: #1F2328; margin-bottom: 5px;
+  font-size: 1.2rem; font-weight: 600; line-height: 1.25;
+  color: #1F2328; margin-bottom: 8px;
 }
 .bm-ev-detail {
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem; color: #6B6459; line-height: 1.5;
+  font-size: 0.84rem; color: #4A453E; line-height: 1.55;
 }
 .bm-ev.dark {
-  background: #1F2328; border-color: rgba(180,145,80,0.3);
+  background: #2B2F28; border-color: #2B2F28;
 }
-.bm-ev.dark .bm-ev-label { color: rgba(180,145,80,0.8); }
-.bm-ev.dark .bm-ev-name { color: #F5EFE0; }
-.bm-ev.dark .bm-ev-detail { color: rgba(245,239,224,0.55); }
+.bm-ev.dark .bm-ev-label { color: #D4B57A; }
+.bm-ev.dark .bm-ev-name { color: #FFFFFF; }
+.bm-ev.dark .bm-ev-detail { color: rgba(255,255,255,0.82); }
 
 .bm-popup-actions {
   display: flex; align-items: center; justify-content: space-between;
@@ -772,16 +774,16 @@ function showTestimonial(id) {
 }
 .bm-btn-primary {
   font-family: 'Jost', sans-serif;
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em;
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em;
   text-transform: uppercase; text-decoration: none;
-  background: #7C8F7A; color: #fff;
-  padding: 11px 22px; display: inline-block;
+  background: #5F7A6A; color: #fff;
+  padding: 12px 24px; display: inline-block;
   transition: background 0.2s;
 }
-.bm-btn-primary:hover { background: #5F7A6A; }
+.bm-btn-primary:hover { background: #4C6556; }
 .bm-btn-skip {
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem; color: #9B9387; text-decoration: none;
+  font-size: 0.82rem; color: #6B6459; text-decoration: none;
   cursor: pointer; background: none; border: none;
   padding: 0; letter-spacing: 0.03em;
   transition: color 0.2s;
@@ -790,11 +792,13 @@ function showTestimonial(id) {
 
 @media (max-width: 480px) {
   #bm-modal-top { padding: 28px 24px 22px; }
-  .bm-popup-title { font-size: 1.55rem; }
+  #bm-modal-top::after { left: 24px; right: 24px; }
+  .bm-popup-title { font-size: 1.6rem; }
   #bm-modal-body { padding: 20px 24px 26px; }
   .bm-events-wrap { grid-template-columns: 1fr; gap: 10px; }
-  .bm-popup-actions { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .bm-popup-actions { flex-direction: column; align-items: stretch; gap: 14px; }
   .bm-btn-primary { width: 100%; text-align: center; }
+  .bm-btn-skip { text-align: center; }
 }
 </style>
 
