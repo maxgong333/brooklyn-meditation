@@ -172,26 +172,20 @@
     #pricingCarousel .pricing-card h3 { font-size: 1.25rem; }
   }
 
-  /* ── Price comparison (strikethrough → discounted) ── */
-  .price-compare { margin: 18px 0 2px; }
-  .pc-was {
-    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
-    font-size: 0.95rem; color: var(--text-light);
+  /* ── Price comparison ── */
+  .price-compare {
+    display: flex; align-items: center; gap: 10px;
+    margin: 20px 0 4px;
+    min-height: 26px;
   }
-  .pc-was s {
+  .pc-was {
     font-family: var(--font-heading);
-    font-size: 1.45rem; line-height: 1;
+    font-size: 1.35rem; line-height: 1;
     color: #9B9387;
+    text-decoration: line-through;
     text-decoration-thickness: 1.5px;
     text-decoration-color: #B4574A;
   }
-  .pc-note { font-size: 0.74rem; letter-spacing: 0.02em; color: #9B9387; }
-  .pc-save {
-    display: flex; align-items: center; gap: 8px;
-    margin: 8px 0 6px 2px;
-    color: #B49150;
-  }
-  .pc-arrow { flex-shrink: 0; }
   .pc-chip {
     font-size: 0.62rem; font-weight: 600;
     letter-spacing: 0.06em; text-transform: uppercase;
@@ -203,9 +197,7 @@
   }
   .price-compare.is-empty { visibility: hidden; }
   .price-compare + .price { margin-top: 0; }
-  .pricing-card.featured .pc-was s { color: rgba(255,255,255,0.5); text-decoration-color: #D98B7E; }
-  .pricing-card.featured .pc-note { color: rgba(255,255,255,0.5); }
-  .pricing-card.featured .pc-save { color: #D4B57A; }
+  .pricing-card.featured .pc-was { color: rgba(255,255,255,0.5); text-decoration-color: #D98B7E; }
   .pricing-card.featured .pc-chip { color: #E6CB94; background: rgba(212,181,122,0.14); border-color: rgba(212,181,122,0.4); }
   @media (max-width: 768px) {
     .price-compare.is-empty { display: none; }
@@ -329,8 +321,7 @@
         <h3>Monthly Membership</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Unlimited access with a flexible monthly commitment.</p>
         <div class="price-compare is-empty" aria-hidden="true">
-          <div class="pc-was"><s>$0</s></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save</span></div>
+          <s class="pc-was">$0</s><span class="pc-chip">Save</span>
         </div>
         <div class="price">$175</div>
         <div class="price-sub">per month · recurring</div>
@@ -350,8 +341,7 @@
         <h3>1 Month Trial</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Try the full membership experience for one month — <strong style="font-weight:600; color:var(--dark);">no recurring charges.</strong></p>
         <div class="price-compare is-empty" aria-hidden="true">
-          <div class="pc-was"><s>$0</s></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save</span></div>
+          <s class="pc-was">$0</s><span class="pc-chip">Save</span>
         </div>
         <div class="price">$200</div>
         <div class="price-sub">one-time · non-recurring</div>
@@ -372,8 +362,7 @@
         <h3>Holiday Special</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Two full months of unlimited practice through the holiday season. Available Nov 16 – Jan 10 only.</p>
         <div class="price-compare">
-          <div class="pc-was"><s>$350</s><span class="pc-note">2 × $175 monthly</span></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $100 · 29% off</span></div>
+          <s class="pc-was">$350</s><span class="pc-chip">Save $100 · 29%</span>
         </div>
         <div class="price">$250</div>
         <div class="price-sub">2 months · limited spots</div>
@@ -394,8 +383,7 @@
         <h3>3 Month Membership</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Commit to three months and build a lasting daily practice.</p>
         <div class="price-compare">
-          <div class="pc-was"><s>$525</s><span class="pc-note">3 × $175 monthly</span></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $125 · 24% off</span></div>
+          <s class="pc-was">$525</s><span class="pc-chip">Save $125 · 24%</span>
         </div>
         <div class="price">$400</div>
         <div class="price-sub">per 3 months · recurring</div>
@@ -414,8 +402,7 @@
         <h3>Annual Membership</h3>
         <p style="font-size:0.9rem; color:var(--text-light);">Best value for committed practitioners.</p>
         <div class="price-compare">
-          <div class="pc-was"><s>$2,100</s><span class="pc-note">12 × $175 monthly</span></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $500 · 24% off</span></div>
+          <s class="pc-was">$2,100</s><span class="pc-chip">Save $500 · 24%</span>
         </div>
         <div class="price">$1,600</div>
         <div class="price-sub">billed annually</div>
