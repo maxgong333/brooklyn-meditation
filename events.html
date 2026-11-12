@@ -531,6 +531,8 @@
     .m-dots { display: none; }
     @media (max-width: 768px) {
       section:has(.m-swipe) { overflow-x: hidden; }
+      .corporate-section .about-grid { grid-template-columns: minmax(0, 1fr) !important; }
+      .corporate-section .about-grid > * { min-width: 0; }
       .m-swipe {
         display: flex !important;
         overflow-x: auto;
