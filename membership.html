@@ -166,8 +166,9 @@
   .holiday-btn { background: #B49150 !important; border-color: #B49150 !important; color: #fff !important; }
   .holiday-btn:hover { background: #9A7A3F !important; border-color: #9A7A3F !important; }
   @media (min-width: 1101px) {
-    #pricingCarousel { grid-template-columns: repeat(5, 1fr); gap: 16px; }
-    #pricingCarousel .pricing-card { padding: 36px 22px; }
+    #pricingCarousel { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
+    #pricingCarousel .pricing-card { padding: 36px 20px; }
+    #pricingCarousel .pricing-card .btn { white-space: nowrap; }
     #pricingCarousel .pricing-card h3 { font-size: 1.25rem; }
   }
 
@@ -186,18 +187,18 @@
   }
   .pc-note { font-size: 0.74rem; letter-spacing: 0.02em; color: #9B9387; }
   .pc-save {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 8px;
     margin: 8px 0 6px 2px;
     color: #B49150;
   }
   .pc-arrow { flex-shrink: 0; }
   .pc-chip {
-    font-size: 0.68rem; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
+    font-size: 0.62rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
     color: #8A6D38;
     background: rgba(180,145,80,0.12);
     border: 1px solid rgba(180,145,80,0.35);
-    padding: 3px 10px; border-radius: 50px;
+    padding: 3px 9px; border-radius: 50px;
     white-space: nowrap;
   }
   .price-compare.is-empty { visibility: hidden; }
@@ -329,7 +330,7 @@
         <p style="font-size:0.9rem; color:var(--text-light);">Unlimited access with a flexible monthly commitment.</p>
         <div class="price-compare is-empty" aria-hidden="true">
           <div class="pc-was"><s>$0</s></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="30" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save</span></div>
+          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save</span></div>
         </div>
         <div class="price">$175</div>
         <div class="price-sub">per month · recurring</div>
@@ -350,7 +351,7 @@
         <p style="font-size:0.9rem; color:var(--text-light);">Try the full membership experience for one month — no recurring charges.</p>
         <div class="price-compare is-empty" aria-hidden="true">
           <div class="pc-was"><s>$0</s></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="30" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save</span></div>
+          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save</span></div>
         </div>
         <div class="price">$200</div>
         <div class="price-sub">one-time · non-recurring</div>
@@ -372,7 +373,7 @@
         <p style="font-size:0.9rem; color:var(--text-light);">Two full months of unlimited practice through the holiday season. Available Nov 16 – Jan 10 only.</p>
         <div class="price-compare">
           <div class="pc-was"><s>$350</s><span class="pc-note">2 × $175 monthly</span></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="30" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $100 · 29% off</span></div>
+          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $100 · 29% off</span></div>
         </div>
         <div class="price">$250</div>
         <div class="price-sub">2 months · limited spots</div>
@@ -394,7 +395,7 @@
         <p style="font-size:0.9rem; color:var(--text-light);">Commit to three months and build a lasting daily practice.</p>
         <div class="price-compare">
           <div class="pc-was"><s>$525</s><span class="pc-note">3 × $175 monthly</span></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="30" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $125 · 24% off</span></div>
+          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $125 · 24% off</span></div>
         </div>
         <div class="price">$400</div>
         <div class="price-sub">per 3 months · recurring</div>
@@ -414,7 +415,7 @@
         <p style="font-size:0.9rem; color:var(--text-light);">Best value for committed practitioners.</p>
         <div class="price-compare">
           <div class="pc-was"><s>$2,100</s><span class="pc-note">12 × $175 monthly</span></div>
-          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="30" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $500 · 24% off</span></div>
+          <div class="pc-save"><svg class="pc-arrow" viewBox="0 0 30 26" width="26" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h20L5 21h21"/><path d="M22 17l4 4-4 4"/></svg><span class="pc-chip">Save $500 · 24% off</span></div>
         </div>
         <div class="price">$1,600</div>
         <div class="price-sub">billed annually</div>
