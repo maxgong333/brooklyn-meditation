@@ -502,16 +502,16 @@
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        scroll-padding-left: 24px;
+        scroll-padding-left: 48px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
         gap: 14px;
-        margin: 32px -24px 0;
-        padding: 4px 24px 16px;
+        margin: 32px -48px 0;
+        padding: 4px 48px 16px;
       }
       .upcoming-grid::-webkit-scrollbar { display: none; }
       .upcoming-grid > .upcoming-card {
-        flex: 0 0 86%;
+        flex: 0 0 calc(100vw - 72px);
         scroll-snap-align: start;
       }
       .upcoming-dots {
