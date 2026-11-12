@@ -494,6 +494,37 @@
           linear-gradient(0deg, rgba(28,28,21,0.85) 0%, rgba(28,28,21,0) 45%);
       }
     }
+
+    /* ── Mobile: swipeable special events ── */
+    .upcoming-dots { display: none; }
+    @media (max-width: 768px) {
+      .upcoming-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 24px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        gap: 14px;
+        margin: 32px -24px 0;
+        padding: 4px 24px 16px;
+      }
+      .upcoming-grid::-webkit-scrollbar { display: none; }
+      .upcoming-grid > .upcoming-card {
+        flex: 0 0 86%;
+        scroll-snap-align: start;
+      }
+      .upcoming-dots {
+        display: flex; justify-content: center; gap: 8px;
+        margin-top: 8px;
+      }
+      .upcoming-dots span {
+        width: 8px; height: 8px; border-radius: 4px;
+        background: var(--border);
+        transition: background 0.3s, width 0.3s;
+      }
+      .upcoming-dots span.active { background: var(--primary-dark); width: 20px; }
+    }
 </style>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta property="og:url" content="https://brooklynmeditation.nyc/events.html" />
@@ -598,7 +629,7 @@
       <h2>Special Events</h2>
       <p>Mark your calendar — these are not to be missed.</p>
     </div>
-    <div class="upcoming-grid">
+    <div class="upcoming-grid" id="upcomingGrid">
 
       <!-- Card 1: End of Year Sound Bath -->
       <div class="upcoming-card dark-card">
@@ -656,6 +687,10 @@
         </div>
       </div>
 
+    </div>
+    <div class="upcoming-dots" id="upcomingDots">
+      <span class="active"></span>
+      <span></span>
     </div>
   </div>
 </section>
@@ -988,6 +1023,7 @@
   }
   initScrollCarousel('eventGrid', 'eventDots');
   initScrollCarousel('openSessionGrid', 'openSessionDots');
+  initScrollCarousel('upcomingGrid', 'upcomingDots');
   initScrollCarousel('onlineDots', 'onlineDots');
   initScrollCarousel('privateCardsGrid', 'privateDots');
 </script>
