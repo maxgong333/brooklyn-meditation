@@ -2020,7 +2020,7 @@ footer {
   /* Header: menu button instead of crowded links */
   .navbar-nav { display: none; }
   .menu-toggle { display: flex; }
-  .navbar-actions { gap: 10px; }
+  .navbar-actions { gap: 10px; margin-left: auto; margin-right: 8px; }
   .navbar-actions .btn { padding: 9px 18px; font-size: 0.82rem; white-space: nowrap; }
 
   /* Full-screen menu: centered column */
@@ -2031,4 +2031,12 @@ footer {
   /* Hero */
   .hero-content { max-width: 640px; }
   .hero-cta { flex-wrap: wrap; }
+
+  /* Pricing: center the odd last card */
+  #pricingCarousel > .pricing-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 380px;
+  }
 }
